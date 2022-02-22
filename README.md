@@ -58,10 +58,10 @@ monorepo. This ensures software quality on our side and lets users pick exactly
 what they need. Here you see how everything fits together (every item is a npm
 package; right depends on left):
 
-![uptick-uptick-sdk.js dependency tree](docs/uptick-uptick-sdk.js-tree.png)
+![uptick-uptick-sdk.js dependency tree]
 
 If this was not enough to scare you away, check out the version including app
-runtime dependencies: [uptick-uptick-sdk.js-tree-full.png](docs/uptick-uptick-sdk.js-tree-full.png).
+runtime dependencies: [uptick-uptick-sdk.js-tree-full.png]
 
 <!--
 Build with depsight (https://github.com/webmaster128/depsight), using:
