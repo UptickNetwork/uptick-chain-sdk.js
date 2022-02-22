@@ -1,0 +1,53 @@
+{
+  "name": "cosmjs-monorepo-root",
+  "description": "Transaction codec and client to communicate with any wasmd blockchain",
+  "private": true,
+  "author": "Ethan Frey <ethanfrey@users.noreply.github.com>",
+  "license": "Apache-2.0",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build/",
+    "*.md",
+    "!*.spec.*",
+    "!**/testdata/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cosmos/cosmjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "format": "yarn workspaces foreach --topological-dev --parallel --verbose run format",
+    "format-text": "prettier --write \"./*.md\" \"./docs/*.md\" && yarn workspaces foreach --topological-dev --parallel --verbose run format-text",
+    "format-shell": "shfmt -w scripts packages",
+    "lint": "yarn workspaces foreach --topological-dev --parallel --verbose run lint",
+    "lint-fix": "yarn workspaces foreach --topological-dev --parallel --verbose run lint-fix",
+    "test": "yarn workspaces foreach --topological-dev --parallel --verbose run test",
+    "test-firefox": "yarn workspaces foreach --topological-dev --parallel --verbose run test-firefox",
+    "test-chrome": "yarn workspaces foreach --topological-dev --parallel --verbose run test-chrome",
+    "coverage": "yarn workspaces foreach --topological-dev --parallel --verbose run coverage",
+    "build": "yarn workspaces foreach --topological-dev --parallel --verbose run build",
+    "docs": "yarn workspaces foreach --topological-dev --parallel --verbose run docs",
+    "pack-web": "yarn workspaces foreach --topological-dev --parallel --verbose run pack-web",
+    "publish-next": "yarn workspaces foreach --no-private exec yarn npm publish --tag next",
+    "publish-latest": "yarn workspaces foreach --no-private exec yarn npm publish"
+  },
+  "devDependencies": {
+    "@cosmjs/amino": "workspace:packages/amino",
+    "@cosmjs/cosmwasm-stargate": "workspace:packages/cosmwasm-stargate",
+    "@cosmjs/crypto": "workspace:packages/crypto",
+    "@cosmjs/encoding": "workspace:packages/encoding",
+    "@cosmjs/proto-signing": "workspace:packages/proto-signing",
+    "@cosmjs/stargate": "workspace:packages/stargate",
+    "eslint": "^7.5",
+    "prettier": "^2.4.1",
+    "typescript": "~4.4"
+  }
+}
