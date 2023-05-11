@@ -1,6 +1,8 @@
 import { encodeSecp256k1Pubkey, makeSignDoc as makeSignDocAmino, StdFee } from "@cosmjs/amino";
 import { fromBase64 } from "@cosmjs/encoding";
 import { Int53, Uint53 } from "@cosmjs/math";
+
+//xxl swift package
 import {
   EncodeObject,
   encodePubkey,
@@ -11,7 +13,21 @@ import {
   OfflineSigner,
   Registry,
   TxBodyEncodeObject,
-} from "@cosmjs/proto-signing";
+} from "@uptsmart/proto-signing";
+
+//xxl swift local
+// import {
+//   EncodeObject,
+//   encodePubkey,
+//   GeneratedType,
+//   isOfflineDirectSigner,
+//   makeAuthInfoBytes,
+//   makeSignDoc,
+//   OfflineSigner,
+//   Registry,
+//   TxBodyEncodeObject,
+// } from "../../proto-signing";
+
 import { Tendermint34Client } from "@cosmjs/tendermint-rpc";
 import { assert, assertDefined } from "@cosmjs/utils";
 import { MsgExec, MsgGrant, MsgRevoke } from "cosmjs-types/cosmos/authz/v1beta1/tx";
@@ -61,9 +77,20 @@ import {
   MsgConnectionOpenTry,
 } from "cosmjs-types/ibc/core/connection/v1/tx";
 
-//xxl #### import 
+//xxl ## import 
 //const nft_tx_pb= require( './proto-types/uptick/collection/v1/tx_pb');
-const nft_tx_pb = require( '../../proto-types/uptick/collection/v1/tx_pb');
+//const nft_tx_pb = require( '../../proto-types/uptick/collection/v1/tx_pb');
+const nft_tx_pb = require("@uptsmart/proto-types/src/uptick/collection/v1/tx_pb");
+
+//xxl ## add erc20 convert msg 0622
+const erc20_tx_pb = require("@uptsmart/proto-types/src/uptick/erc20/v1/tx_pb");
+
+//xxl 02 local
+const erc721_tx_pb = require("../../proto-types/src/uptick/erc721/v1/tx_pb")
+
+//xxl 02 local
+const nft_transfer_tx_pb = require("../../proto-types/src/ibc/applications/nft_transfer/v1/tx_pb")
+
 
 import Long from "long";
 
@@ -119,11 +146,23 @@ export const defaultRegistryTypes: ReadonlyArray<[string, GeneratedType]> = [
   ["/ibc.core.connection.v1.MsgConnectionOpenInit", MsgConnectionOpenInit],
   ["/ibc.core.connection.v1.MsgConnectionOpenTry", MsgConnectionOpenTry],
 
-  //xxl ##01 list 
+  //xxl 01 list 
   ["/uptick.collection.v1.MsgIssueDenom", nft_tx_pb.MsgIssueDenom],
   ["/uptick.collection.v1.MsgMintNFT", nft_tx_pb.MsgMintNFT],
   ["/uptick.collection.v1.MsgTransferNFT", nft_tx_pb.MsgTransferNFT],
   ["/uptick.collection.v1.MsgTransferDenom", nft_tx_pb.MsgTransferDenom],
+
+  ["/uptick.erc20.v1.MsgConvertERC20", erc20_tx_pb.MsgConvertERC20],
+  ["/uptick.erc20.v1.MsgConvertCoin", erc20_tx_pb.MsgConvertCoin],
+
+  //xxl 02 list 
+  ["/uptick.erc721.v1.MsgConvertERC721", erc721_tx_pb.MsgConvertERC721],
+  ["/uptick.erc721.v1.MsgConvertNFT", erc721_tx_pb.MsgConvertNFT],
+
+  //xxl 03 list 
+  ["/ibc.applications.nft_transfer.v1.MsgTransfer", nft_transfer_tx_pb.MsgTransfer],
+  
+
 ];
 
 function createDefaultRegistry(): Registry {
@@ -250,6 +289,7 @@ export class SigningStargateClient extends StargateClient {
     fee: StdFee | "auto" | number,
     memo = "",
   ){
+    console.log("xxl test ");
     return this.signAndBroadcast(senderAddress,sendMsgs, fee, memo);
   }
 
@@ -268,6 +308,8 @@ export class SigningStargateClient extends StargateClient {
         amount: amount,
       }),
     };
+
+
     return this.signAndBroadcast(delegatorAddress, [delegateMsg], fee, memo);
   }
 
@@ -350,7 +392,9 @@ export class SigningStargateClient extends StargateClient {
     } else {
       usedFee = fee;
     }
+    debugger
     const txRaw = await this.sign(signerAddress, messages, usedFee, memo);
+
     const txBytes = TxRaw.encode(txRaw).finish();
     return this.broadcastTx(txBytes, this.broadcastTimeoutMs, this.broadcastPollIntervalMs);
   }
@@ -372,6 +416,7 @@ export class SigningStargateClient extends StargateClient {
     memo: string,
     explicitSignerData?: SignerData,
   ): Promise<TxRaw> {
+
     let signerData: SignerData;
     if (explicitSignerData) {
       signerData = explicitSignerData;
@@ -448,6 +493,14 @@ export class SigningStargateClient extends StargateClient {
       throw new Error("Failed to retrieve account from signer");
     }
     const pubkey = encodePubkey(encodeSecp256k1Pubkey(accountFromSigner.pubkey));
+    if(accountFromSigner.address.indexOf("uptick") != -1){
+      pubkey.typeUrl = "/ethermint.crypto.v1.ethsecp256k1.PubKey";
+    }
+    else{
+      pubkey.typeUrl = "/cosmos.crypto.secp256k1.PubKey";
+    }
+
+
     const txBodyEncodeObject: TxBodyEncodeObject = {
       typeUrl: "/cosmos.tx.v1beta1.TxBody",
       value: {

@@ -1,6 +1,6 @@
 {
-  "name": "@cosmjs/proto-signing",
-  "version": "0.27.1",
+  "name": "@uptsmart/proto-signing",
+  "version": "0.27.4",
   "description": "Utilities for protobuf based signing (Cosmos SDK 0.40+)",
   "contributors": [
     "Will Clark <willclarktech@users.noreply.github.com>",
@@ -39,16 +39,16 @@
     "pack-web": "yarn build-or-skip && webpack --mode development --config webpack.web.config.js"
   },
   "dependencies": {
-    "@cosmjs/amino": "workspace:packages/amino",
-    "@cosmjs/crypto": "workspace:packages/crypto",
-    "@cosmjs/math": "workspace:packages/math",
+    "@cosmjs/amino": "0.27.1",
+    "@cosmjs/crypto": "0.27.1",
+    "@cosmjs/math": "0.27.1",
     "cosmjs-types": "^0.4.0",
     "long": "^4.0.0",
     "protobufjs": "~6.10.2"
   },
   "devDependencies": {
-    "@cosmjs/encoding": "workspace:packages/encoding",
-    "@cosmjs/utils": "workspace:packages/utils",
+    "@cosmjs/encoding": "0.27.1",
+    "@cosmjs/utils": "0.27.1",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/eslint-plugin-prettier": "^3",
     "@types/jasmine": "^3.8",

@@ -118,12 +118,12 @@ export class Registry {
    * // Coin is typed TsProtoGeneratedType now.
    * ```
    */
-  //xxl #### add any return type 
+  //xxl 00 add any return type 
   public lookupType(typeUrl: string): GeneratedType | undefined | any{
     return this.types.get(typeUrl);
   }
 
-  //xxl #### add any return type
+  //xxl 00 add any return type
   private lookupTypeWithError(typeUrl: string): GeneratedType | any{
     const type = this.lookupType(typeUrl);
     if (!type) {
@@ -146,10 +146,10 @@ export class Registry {
     }
     const type = this.lookupTypeWithError(typeUrl);
 
-    console.log("xxl #### encode");
+    console.log("xxl 00 encode");
     console.log(type);
 
-    if(typeUrl.indexOf("uptick") != -1){
+    if(typeUrl.indexOf("uptick") != -1 || typeUrl.indexOf("nft_transfer") != -1){
 
       let instance = new type(value);
       let encodeBytes = instance.serializeBinary();

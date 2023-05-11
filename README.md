@@ -1,4 +1,11 @@
-uptick-uptick-sdk.js is the Swiss Army knife to power JavaScript based client solutions
+<div align="center">
+  <a href="https://lgtm.com/projects/g/cosmos/cosmjs/context:javascript"><img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/cosmos/cosmjs.svg?logo=lgtm&logoWidth=18"/></a>
+  <a href="https://github.com/cosmos/cosmjs/blob/main/LICENSE">
+    <img alt="License: Apache-2.0" src="https://img.shields.io/github/license/cosmos/cosmjs.svg" />
+  </a>
+</div>
+
+UptickJS is the Swiss Army knife to power JavaScript based client solutions
 ranging from Web apps/explorers over browser extensions to server-side clients
 like faucets/scrapers in the Cosmos ecosystem.
 
@@ -10,9 +17,9 @@ develop in TypeScript.
 [Here is a list of examples][guided tour] using the Stargate package for use
 with [Cosmos SDK 0.41] applications (like [gaia 4]). Take a look at the wiki
 page,
-["What can uptick-uptick-sdk.js do for me?"](https://github.com/UptickNetwork/uptick-uptick-sdk.js/wiki/What-can-uptick-uptick-sdk.js-do-for-me%3F)
+["What can UptickJS do for me?"](https://github.com/cosmos/cosmjs/wiki/What-can-UptickJS-do-for-me%3F)
 and various tests
-([ex](https://github.com/UptickNetwork/uptick-uptick-sdk.js/blob/main/packages/stargate/src/signingstargateclient.spec.ts))
+([ex](https://github.com/cosmos/cosmjs/blob/main/packages/stargate/src/signingstargateclient.spec.ts))
 for more example usage of the packages.
 
 [guided tour]:
@@ -22,34 +29,34 @@ for more example usage of the packages.
 
 ### API documentation
 
-The full API documentation is hosted at [cosmos.github.io/uptick-uptick-sdk.js]. This is a bit
+The full API documentation is hosted at [cosmos.github.io/cosmjs]. This is a bit
 tricky to navigate and requires basic TypeScript understanding. It is helpful if
 you have want to look up details for advanced use cases. This documentation is
 auto-generated based on the current main branch and can occasionally diverge
 from the latest release.
 
-[cosmos.github.io/uptick-uptick-sdk.js]: https://cosmos.github.io/uptick-uptick-sdk.js
+[cosmos.github.io/cosmjs]: https://cosmos.github.io/cosmjs
 
 ### Using custom Stargate modules
 
-Documentation on how to use your own custom modules with uptick-uptick-sdk.js for Stargate
+Documentation on how to use your own custom modules with UptickJS for Stargate
 chains (Cosmos SDK v0.41) can be found
-[here](https://github.com/UptickNetwork/uptick-uptick-sdk.js/blob/main/packages/stargate/CUSTOM_PROTOBUF_CODECS.md).
+[here](https://github.com/cosmos/cosmjs/blob/main/packages/stargate/CUSTOM_PROTOBUF_CODECS.md).
 
 ## Packages
 
-uptick-uptick-sdk.js is a library that consists of many smaller npm packages within the
-[@uptick-uptick-sdk.js namespace](https://www.npmjs.com/org/uptick-uptick-sdk.js), a so called monorepo.
+UptickJS is a library that consists of many smaller npm packages within the
+[@cosmjs namespace](https://www.npmjs.com/org/cosmjs), a so called monorepo.
 Here are some of them to get an idea:
 
 | Package                                                 | Description                                                                                                                                                                                                                              | Latest                                                                                                                                |
 | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| [@uptick-uptick-sdk.js/stargate](packages/stargate)                   | A client library for the Cosmos SDK 0.40 (cosmoshub-4), 0.41 and 0.42 (Stargate)                                                                                                                                                         | [![npm version](https://img.shields.io/npm/v/@uptick-uptick-sdk.js/stargate.svg)](https://www.npmjs.com/package/@uptick-uptick-sdk.js/stargate)                   |
-| [@uptick-uptick-sdk.js/faucet](packages/faucet)                       | A faucet application for node.js                                                                                                                                                                                                         | [![npm version](https://img.shields.io/npm/v/@uptick-uptick-sdk.js/faucet.svg)](https://www.npmjs.com/package/@uptick-uptick-sdk.js/faucet)                       |
-| [@uptick-uptick-sdk.js/cosmwasm-stargate](packages/cosmwasm-stargate) | Client for Stargate chains with the CosmWasm module enabled                                                                                                                                                                              | [![npm version](https://img.shields.io/npm/v/@uptick-uptick-sdk.js/cosmwasm-stargate.svg)](https://www.npmjs.com/package/@uptick-uptick-sdk.js/cosmwasm-stargate) |
-| [@uptick-uptick-sdk.js/crypto](packages/crypto)                       | Cryptography for blockchain projects, e.g. hashing (SHA-2, Keccak256, Ripemd160), signing (secp256k1, ed25519), HD key derivation (BIPO39, SLIP-0010), KDFs and symmetric encryption for key storage (PBKDF2, Argon2, XChaCha20Poly1305) | [![npm version](https://img.shields.io/npm/v/@uptick-uptick-sdk.js/crypto.svg)](https://www.npmjs.com/package/@uptick-uptick-sdk.js/crypto)                       |
-| [@uptick-uptick-sdk.js/encoding](packages/encoding)                   | Encoding helpers for blockchain projects                                                                                                                                                                                                 | [![npm version](https://img.shields.io/npm/v/@uptick-uptick-sdk.js/encoding.svg)](https://www.npmjs.com/package/@uptick-uptick-sdk.js/encoding)                   |
-| [@uptick-uptick-sdk.js/math](packages/math)                           | Safe integers; decimals for handling financial amounts                                                                                                                                                                                   | [![npm version](https://img.shields.io/npm/v/@uptick-uptick-sdk.js/math.svg)](https://www.npmjs.com/package/@uptick-uptick-sdk.js/math)                           |
+| [@uptsmart/stargate](packages/stargate)                   | A client library for the Cosmos SDK 0.40 (cosmoshub-4), 0.41 and 0.42 (Stargate)                                                                                                                                                         | [![npm version](https://img.shields.io/npm/v/@uptsmart/stargate.svg)](https://www.npmjs.com/package/@uptsmart/stargate)                   |
+| [@cosmjs/faucet](packages/faucet)                       | A faucet application for node.js                                                                                                                                                                                                         | [![npm version](https://img.shields.io/npm/v/@cosmjs/faucet.svg)](https://www.npmjs.com/package/@cosmjs/faucet)                       |
+| [@cosmjs/cosmwasm-stargate](packages/cosmwasm-stargate) | Client for Stargate chains with the CosmWasm module enabled                                                                                                                                                                              | [![npm version](https://img.shields.io/npm/v/@cosmjs/cosmwasm-stargate.svg)](https://www.npmjs.com/package/@cosmjs/cosmwasm-stargate) |
+| [@cosmjs/crypto](packages/crypto)                       | Cryptography for blockchain projects, e.g. hashing (SHA-2, Keccak256, Ripemd160), signing (secp256k1, ed25519), HD key derivation (BIPO39, SLIP-0010), KDFs and symmetric encryption for key storage (PBKDF2, Argon2, XChaCha20Poly1305) | [![npm version](https://img.shields.io/npm/v/@cosmjs/crypto.svg)](https://www.npmjs.com/package/@cosmjs/crypto)                       |
+| [@cosmjs/encoding](packages/encoding)                   | Encoding helpers for blockchain projects                                                                                                                                                                                                 | [![npm version](https://img.shields.io/npm/v/@cosmjs/encoding.svg)](https://www.npmjs.com/package/@cosmjs/encoding)                   |
+| [@cosmjs/math](packages/math)                           | Safe integers; decimals for handling financial amounts                                                                                                                                                                                   | [![npm version](https://img.shields.io/npm/v/@cosmjs/math.svg)](https://www.npmjs.com/package/@cosmjs/math)                           |
 
 ### Modularity
 
@@ -58,17 +65,17 @@ monorepo. This ensures software quality on our side and lets users pick exactly
 what they need. Here you see how everything fits together (every item is a npm
 package; right depends on left):
 
-![uptick-uptick-sdk.js dependency tree]
+![UptickJS dependency tree](docs/cosmjs-tree.png)
 
 If this was not enough to scare you away, check out the version including app
-runtime dependencies: [uptick-uptick-sdk.js-tree-full.png]
+runtime dependencies: [cosmjs-tree-full.png](docs/cosmjs-tree-full.png).
 
 <!--
 Build with depsight (https://github.com/webmaster128/depsight), using:
 
-from_npm . | depsight --include "^@uptick-uptick-sdk.js" --format png --dpi 150 --output docs/uptick-uptick-sdk.js-tree.png
-from_npm . | depsight --exclude uptick-uptick-sdk.js-monorepo-root --format png --dpi 150 --output docs/uptick-uptick-sdk.js-tree-full.png
-optipng docs/uptick-uptick-sdk.js-tree*.png
+from_npm . | depsight --include "^@cosmjs" --format png --dpi 150 --output docs/cosmjs-tree.png
+from_npm . | depsight --exclude cosmjs-monorepo-root --format png --dpi 150 --output docs/cosmjs-tree-full.png
+optipng docs/cosmjs-tree*.png
 -->
 
 ### Supported JS environments
@@ -90,7 +97,7 @@ can work on a solution with swappable implementations.
 ## Roadmap
 
 We maintain a [development board](https://github.com/orgs/cosmos/projects/6),
-use [release milestones](https://github.com/UptickNetwork/uptick-uptick-sdk.js/milestones) and share
+use [release milestones](https://github.com/cosmos/cosmjs/milestones) and share
 important updates in the [CosmWasm Community Call]. For higher level roadmap
 discussion please reach out to the team.
 
@@ -107,14 +114,14 @@ discussion please reach out to the team.
    not stable. Unverified queries can be used instead. Those queries are
    deprecated now and will be removed in 0.27 ([#910]).
 
-[#910]: https://github.com/UptickNetwork/uptick-uptick-sdk.js/pull/910
+[#910]: https://github.com/cosmos/cosmjs/pull/910
 
 ### 0.25
 
 1. Decoding blocks of height 1 is unsupported. This is fixed in [#815] and will
-   be released as part of uptick-uptick-sdk.js 0.26.
+   be released as part of UptickJS 0.26.
 
-[#815]: https://github.com/UptickNetwork/uptick-uptick-sdk.js/pull/815
+[#815]: https://github.com/cosmos/cosmjs/pull/815
 
 ### 0.24
 
@@ -125,15 +132,15 @@ discussion please reach out to the team.
 
 ## Get in touch
 
-The uptick-uptick-sdk.js development team is happy to get in touch with you for all questions
+The UptickJS development team is happy to get in touch with you for all questions
 and suggestions.
 
-- [GitHub issues](https://github.com/UptickNetwork/uptick-uptick-sdk.js/issues) for bugs and feature
+- [GitHub issues](https://github.com/cosmos/cosmjs/issues) for bugs and feature
   requests
-- The #uptick-uptick-sdk.js channel on the
+- The #cosmjs channel on the
   ["Cosmos Community" Discord server](https://discord.gg/vcExX9T) for questions
   and open discussions
-- [#uptick-uptick-sdk.js on Twitter](https://twitter.com/search?q=%23uptick-uptick-sdk.js) to spread the
+- [#UptickJS on Twitter](https://twitter.com/search?q=%23CosmJS) to spread the
   word
 
 ## Development

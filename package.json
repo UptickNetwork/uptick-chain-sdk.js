@@ -1,11 +1,11 @@
 {
-  "name": "cosmjs-monorepo-root",
+  "name": "@uptsmart/uptickjs",
   "description": "Transaction codec and client to communicate with any wasmd blockchain",
-  "private": true,
-  "author": "Ethan Frey <ethanfrey@users.noreply.github.com>",
+  "author": "uptsmart <1157447041@qq.com>",
   "license": "Apache-2.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "version": "1.0.1",
   "files": [
     "build/",
     "*.md",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cosmos/cosmjs"
+    "url": "https://github.com/uptSmart/uptickjs"
   },
   "publishConfig": {
     "access": "public",
@@ -37,15 +37,15 @@
     "docs": "yarn workspaces foreach --topological-dev --parallel --verbose run docs",
     "pack-web": "yarn workspaces foreach --topological-dev --parallel --verbose run pack-web",
     "publish-next": "yarn workspaces foreach --no-private exec yarn npm publish --tag next",
-    "publish-latest": "yarn workspaces foreach --no-private exec yarn npm publish"
+    "publish-latest": "yarn workspaces foreach --no-private exec yarn npm publish",
+    "proto-gen": "sh ./scripts/protocgen.sh"
   },
   "devDependencies": {
-    "@cosmjs/amino": "workspace:packages/amino",
-    "@cosmjs/cosmwasm-stargate": "workspace:packages/cosmwasm-stargate",
-    "@cosmjs/crypto": "workspace:packages/crypto",
-    "@cosmjs/encoding": "workspace:packages/encoding",
-    "@cosmjs/proto-signing": "workspace:packages/proto-signing",
-    "@cosmjs/stargate": "workspace:packages/stargate",
+    "@cosmjs/amino": "0.27.1",
+    "@cosmjs/cosmwasm-stargate": "0.27.1",
+    "@cosmjs/encoding": "0.27.1",
+    "@uptsmart/proto-signing": "0.27.2",
+    "@uptsmart/stargate": "0.27.4",
     "eslint": "^7.5",
     "prettier": "^2.4.1",
     "typescript": "~4.4"

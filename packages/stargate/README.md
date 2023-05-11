@@ -1,6 +1,6 @@
-# @cosmjs/stargate
+# @uptsmart/stargate
 
-[![npm version](https://img.shields.io/npm/v/@cosmjs/stargate.svg)](https://www.npmjs.com/package/@cosmjs/stargate)
+[![npm version](https://img.shields.io/npm/v/@uptsmart/stargate.svg)](https://www.npmjs.com/package/@uptsmart/stargate)
 
 A client library for the Cosmos SDK 0.40.
 

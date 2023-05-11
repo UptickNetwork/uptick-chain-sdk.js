@@ -19,6 +19,7 @@
     "removeComments": false,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "strict": true
+    "strict": true,
+    "skipLibCheck":true
   }
 }

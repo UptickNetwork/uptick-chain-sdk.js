@@ -4,13 +4,13 @@
 const { coins } = require("@cosmjs/amino");
 const { Random } = require("@cosmjs/crypto");
 const { Bech32 } = require("@cosmjs/encoding");
-const { DirectSecp256k1HdWallet } = require("@cosmjs/proto-signing");
+const { DirectSecp256k1HdWallet } = require("@uptsmart/proto-signing");
 const {
   assertIsDeliverTxSuccess,
   SigningStargateClient,
   calculateFee,
   GasPrice,
-} = require("@cosmjs/stargate");
+} = require("@uptsmart/stargate");
 
 const rpcUrl = "http://localhost:26659";
 const prefix = "wasm";

@@ -1,6 +1,6 @@
-# @cosmjs/proto-signing
+# @uptsmart/proto-signing
 
-[![npm version](https://img.shields.io/npm/v/@cosmjs/proto-signing.svg)](https://www.npmjs.com/package/@cosmjs/proto-signing)
+[![npm version](https://img.shields.io/npm/v/@uptsmart/proto-signing.svg)](https://www.npmjs.com/package/@uptsmart/proto-signing)
 
 Utilities for protobuf based signing (for Cosmos SDK 0.40+) as documented in
 [ADR-020](https://github.com/cosmos/cosmos-sdk/blob/66c5798cec/docs/architecture/adr-020-protobuf-transaction-encoding.md)

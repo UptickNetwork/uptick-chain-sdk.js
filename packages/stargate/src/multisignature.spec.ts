@@ -5,7 +5,7 @@ import {
   pubkeyToAddress,
   Secp256k1HdWallet,
 } from "@cosmjs/amino";
-import { coins } from "@cosmjs/proto-signing";
+import { coins } from "@uptsmart/proto-signing";
 import { assert } from "@cosmjs/utils";
 import { MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";

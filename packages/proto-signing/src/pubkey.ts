@@ -5,7 +5,7 @@ import {
   isSecp256k1Pubkey,
   MultisigThresholdPubkey,
   Pubkey,
-  SinglePubkey,
+  SinglePubkey
 } from "@cosmjs/amino";
 import { fromBase64 } from "@cosmjs/encoding";
 import { Uint53 } from "@cosmjs/math";
@@ -38,9 +38,21 @@ export function encodePubkey(pubkey: Pubkey): Any {
 
 function decodeSinglePubkey(pubkey: Any): SinglePubkey {
   switch (pubkey.typeUrl) {
+    case "/ethermint.crypto.v1.ethsecp256k1.PubKey": 
     case "/cosmos.crypto.secp256k1.PubKey": {
       const { key } = PubKey.decode(pubkey.value);
-      return encodeSecp256k1Pubkey(key);
+
+      console.log("xxl 00 decodeSinglePubkey start ... ");
+      console.log(key);
+
+      let encodePubkey = encodeSecp256k1Pubkey(key);
+      console.log("xxl 00 encodePubkey : " + encodePubkey);
+
+      console.log("xxl 00 decodeSinglePubkey end ");
+
+      // return encodeSecp256k1Pubkey(key);
+      return encodePubkey;
+      
     }
     default:
       throw new Error(`Pubkey type_url ${pubkey.typeUrl} not recognized as single public key type`);
@@ -48,14 +60,23 @@ function decodeSinglePubkey(pubkey: Any): SinglePubkey {
 }
 
 export function decodePubkey(pubkey?: Any | null): Pubkey | null {
+
+
   if (!pubkey || !pubkey.value) {
     return null;
   }
 
+  console.log("xxl 00 pubkey.typeUr is 1: " + pubkey.typeUrl);
+  console.log("xxl 00 pubkey is ");
+  console.log(pubkey);
+
   switch (pubkey.typeUrl) {
+
+    case "/ethermint.crypto.v1.ethsecp256k1.PubKey": 
     case "/cosmos.crypto.secp256k1.PubKey": {
       return decodeSinglePubkey(pubkey);
     }
+
     case "/cosmos.crypto.multisig.LegacyAminoPubKey": {
       const { threshold, publicKeys } = LegacyAminoPubKey.decode(pubkey.value);
       const out: MultisigThresholdPubkey = {

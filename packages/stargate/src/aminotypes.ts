@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { AminoMsg, decodeBech32Pubkey, encodeBech32Pubkey } from "@cosmjs/amino";
 import { fromBase64, toBase64 } from "@cosmjs/encoding";
-import { EncodeObject } from "@cosmjs/proto-signing";
+import { EncodeObject } from "@uptsmart/proto-signing";
 import { assert, assertDefinedAndNotNull, isNonNullObject } from "@cosmjs/utils";
 import { MsgMultiSend, MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
 import {

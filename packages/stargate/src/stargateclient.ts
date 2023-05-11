@@ -74,7 +74,7 @@ export interface IndexedTx {
    * const transactionId = toHex(sha256(indexTx.tx)).toUpperCase();
    * ```
    *
-   * Use `decodeTxRaw` from @cosmjs/proto-signing to decode this.
+   * Use `decodeTxRaw` from @uptsmart/proto-signing to decode this.
    */
   readonly tx: Uint8Array;
   readonly gasUsed: number;
