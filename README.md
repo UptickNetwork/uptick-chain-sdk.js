@@ -5,17 +5,16 @@
   </a>
 </div>
 
-UptickJS is the Swiss Army knife to power JavaScript based client solutions
+Uptick-Chain-SDK.JS is the Swiss Army knife to power JavaScript based client solutions
 ranging from Web apps/explorers over browser extensions to server-side clients
-like faucets/scrapers in the Cosmos ecosystem.
+like faucets/scrapers in the Uptick ecosystem.
 
-"Cosm" is short for Cosmos and "JS" is short for _runs everywhere_ – we actually
-develop in TypeScript.
+"JS" is short for _runs everywhere_ – we actually develop in TypeScript.
 
 ## Documentation
 
 [Here is a list of examples][guided tour] using the Stargate package for use
-with [Cosmos SDK 0.41] applications (like [gaia 4]). Take a look at the wiki
+with [Cosmos SDK 0.46] applications . Take a look at the wiki
 page,
 ["What can UptickJS do for me?"](https://github.com/cosmos/cosmjs/wiki/What-can-UptickJS-do-for-me%3F)
 and various tests
