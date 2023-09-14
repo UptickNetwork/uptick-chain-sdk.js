@@ -20,9 +20,6 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "format": "yarn workspaces foreach --topological-dev --parallel --verbose run format",
     "format-text": "prettier --write \"./*.md\" \"./docs/*.md\" && yarn workspaces foreach --topological-dev --parallel --verbose run format-text",

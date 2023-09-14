@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for uptick.erc721.v1
+ * @fileoverview gRPC-Web generated client stub for uptick.cw721.v1
  * @enhanceable
  * @public
  */
@@ -8,7 +8,7 @@
 // versions:
 // 	protoc-gen-grpc-web v1.4.2
 // 	protoc              v3.20.3
-// source: uptick/erc721/v1/tx.proto
+// source: uptick/cw721/v1/tx.proto
 
 
 /* eslint-disable */
@@ -21,10 +21,12 @@ grpc.web = require('grpc-web');
 
 
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js')
+
+var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js')
 const proto = {};
 proto.uptick = {};
-proto.uptick.erc721 = {};
-proto.uptick.erc721.v1 = require('./tx_pb.js');
+proto.uptick.cw721 = {};
+proto.uptick.cw721.v1 = require('./tx_pb.js');
 
 /**
  * @param {string} hostname
@@ -34,7 +36,7 @@ proto.uptick.erc721.v1 = require('./tx_pb.js');
  * @struct
  * @final
  */
-proto.uptick.erc721.v1.MsgClient =
+proto.uptick.cw721.v1.MsgClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -60,7 +62,7 @@ proto.uptick.erc721.v1.MsgClient =
  * @struct
  * @final
  */
-proto.uptick.erc721.v1.MsgPromiseClient =
+proto.uptick.cw721.v1.MsgPromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -81,39 +83,39 @@ proto.uptick.erc721.v1.MsgPromiseClient =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.uptick.erc721.v1.MsgConvertNFT,
- *   !proto.uptick.erc721.v1.MsgConvertNFTResponse>}
+ *   !proto.uptick.cw721.v1.MsgConvertNFT,
+ *   !proto.uptick.cw721.v1.MsgConvertNFTResponse>}
  */
 const methodDescriptor_Msg_ConvertNFT = new grpc.web.MethodDescriptor(
-  '/uptick.erc721.v1.Msg/ConvertNFT',
+  '/uptick.cw721.v1.Msg/ConvertNFT',
   grpc.web.MethodType.UNARY,
-  proto.uptick.erc721.v1.MsgConvertNFT,
-  proto.uptick.erc721.v1.MsgConvertNFTResponse,
+  proto.uptick.cw721.v1.MsgConvertNFT,
+  proto.uptick.cw721.v1.MsgConvertNFTResponse,
   /**
-   * @param {!proto.uptick.erc721.v1.MsgConvertNFT} request
+   * @param {!proto.uptick.cw721.v1.MsgConvertNFT} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.uptick.erc721.v1.MsgConvertNFTResponse.deserializeBinary
+  proto.uptick.cw721.v1.MsgConvertNFTResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.uptick.erc721.v1.MsgConvertNFT} request The
+ * @param {!proto.uptick.cw721.v1.MsgConvertNFT} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.uptick.erc721.v1.MsgConvertNFTResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.uptick.cw721.v1.MsgConvertNFTResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.uptick.erc721.v1.MsgConvertNFTResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.uptick.cw721.v1.MsgConvertNFTResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.uptick.erc721.v1.MsgClient.prototype.convertNFT =
+proto.uptick.cw721.v1.MsgClient.prototype.convertNFT =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/uptick.erc721.v1.Msg/ConvertNFT',
+      '/uptick.cw721.v1.Msg/ConvertNFT',
       request,
       metadata || {},
       methodDescriptor_Msg_ConvertNFT,
@@ -122,17 +124,17 @@ proto.uptick.erc721.v1.MsgClient.prototype.convertNFT =
 
 
 /**
- * @param {!proto.uptick.erc721.v1.MsgConvertNFT} request The
+ * @param {!proto.uptick.cw721.v1.MsgConvertNFT} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.uptick.erc721.v1.MsgConvertNFTResponse>}
+ * @return {!Promise<!proto.uptick.cw721.v1.MsgConvertNFTResponse>}
  *     Promise that resolves to the response
  */
-proto.uptick.erc721.v1.MsgPromiseClient.prototype.convertNFT =
+proto.uptick.cw721.v1.MsgPromiseClient.prototype.convertNFT =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/uptick.erc721.v1.Msg/ConvertNFT',
+      '/uptick.cw721.v1.Msg/ConvertNFT',
       request,
       metadata || {},
       methodDescriptor_Msg_ConvertNFT);
@@ -142,63 +144,63 @@ proto.uptick.erc721.v1.MsgPromiseClient.prototype.convertNFT =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.uptick.erc721.v1.MsgConvertERC721,
- *   !proto.uptick.erc721.v1.MsgConvertERC721Response>}
+ *   !proto.uptick.cw721.v1.MsgConvertCW721,
+ *   !proto.uptick.cw721.v1.MsgConvertCW721Response>}
  */
-const methodDescriptor_Msg_ConvertERC721 = new grpc.web.MethodDescriptor(
-  '/uptick.erc721.v1.Msg/ConvertERC721',
+const methodDescriptor_Msg_ConvertCW721 = new grpc.web.MethodDescriptor(
+  '/uptick.cw721.v1.Msg/ConvertCW721',
   grpc.web.MethodType.UNARY,
-  proto.uptick.erc721.v1.MsgConvertERC721,
-  proto.uptick.erc721.v1.MsgConvertERC721Response,
+  proto.uptick.cw721.v1.MsgConvertCW721,
+  proto.uptick.cw721.v1.MsgConvertCW721Response,
   /**
-   * @param {!proto.uptick.erc721.v1.MsgConvertERC721} request
+   * @param {!proto.uptick.cw721.v1.MsgConvertCW721} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.uptick.erc721.v1.MsgConvertERC721Response.deserializeBinary
+  proto.uptick.cw721.v1.MsgConvertCW721Response.deserializeBinary
 );
 
 
 /**
- * @param {!proto.uptick.erc721.v1.MsgConvertERC721} request The
+ * @param {!proto.uptick.cw721.v1.MsgConvertCW721} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.uptick.erc721.v1.MsgConvertERC721Response)}
+ * @param {function(?grpc.web.RpcError, ?proto.uptick.cw721.v1.MsgConvertCW721Response)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.uptick.erc721.v1.MsgConvertERC721Response>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.uptick.cw721.v1.MsgConvertCW721Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.uptick.erc721.v1.MsgClient.prototype.convertERC721 =
+proto.uptick.cw721.v1.MsgClient.prototype.convertCW721 =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/uptick.erc721.v1.Msg/ConvertERC721',
+      '/uptick.cw721.v1.Msg/ConvertCW721',
       request,
       metadata || {},
-      methodDescriptor_Msg_ConvertERC721,
+      methodDescriptor_Msg_ConvertCW721,
       callback);
 };
 
 
 /**
- * @param {!proto.uptick.erc721.v1.MsgConvertERC721} request The
+ * @param {!proto.uptick.cw721.v1.MsgConvertCW721} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.uptick.erc721.v1.MsgConvertERC721Response>}
+ * @return {!Promise<!proto.uptick.cw721.v1.MsgConvertCW721Response>}
  *     Promise that resolves to the response
  */
-proto.uptick.erc721.v1.MsgPromiseClient.prototype.convertERC721 =
+proto.uptick.cw721.v1.MsgPromiseClient.prototype.convertCW721 =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/uptick.erc721.v1.Msg/ConvertERC721',
+      '/uptick.cw721.v1.Msg/ConvertCW721',
       request,
       metadata || {},
-      methodDescriptor_Msg_ConvertERC721);
+      methodDescriptor_Msg_ConvertCW721);
 };
 
 
-module.exports = proto.uptick.erc721.v1;
+module.exports = proto.uptick.cw721.v1;
 

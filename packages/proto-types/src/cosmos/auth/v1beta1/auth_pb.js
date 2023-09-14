@@ -118,21 +118,12 @@ proto.cosmos.auth.v1beta1.BaseAccount.prototype.toObject = function(opt_includeI
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.cosmos.auth.v1beta1.BaseAccount.toObject = function(includeInstance, msg) {
-
-  // var f, obj = {
-  //   address: jspb.Message.getFieldWithDefault(msg, 1, ""),
-  //   pubKey: (f = msg.getPubKey()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
-  //   accountNumber: jspb.Message.getFieldWithDefault(msg, 3, 0),
-  //   sequence: jspb.Message.getFieldWithDefault(msg, 4, 0)
-  // };
-
   var f, obj = {
     address: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pubKey: (f = msg.getPubKey()),
+    pubKey: (f = msg.getPubKey()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
     accountNumber: jspb.Message.getFieldWithDefault(msg, 3, 0),
     sequence: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
-
 
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
