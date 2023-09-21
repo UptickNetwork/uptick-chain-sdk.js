@@ -11,8 +11,8 @@ import {
 } from "cosmjs-types/cosmos/vesting/v1beta1/vesting";
 
 //xxl 00 add accounts require
-// const auth_auth_pb = require("@uptsmart/proto-types/src/ethermint/types/v1/account_pb");
-const auth_auth_pb = require('../../proto-types/src/ethermint/types/v1/account_pb');
+const auth_auth_pb = require("@uptsmart/proto-types/src/ethermint/types/v1/account_pb");
+// const auth_auth_pb = require('../../proto-types/src/ethermint/types/v1/account_pb');
                     
 import { Any } from "cosmjs-types/google/protobuf/any";
 import Long from "long";
@@ -36,14 +36,14 @@ function accountFromBaseAccount(input: BaseAccount): Account {
 
   console.log("xxl 00 accountFromBaseAccount");
   console.log([address, pubKey, accountNumber, sequence]);
-  const pubkey = decodePubkey(pubKey);
+  // const pubkey = decodePubkey(pubKey);
 
   console.log("xxl 00 accountFromBaseAccount");
-  console.log(pubkey);
+  // console.log(pubkey);
   
   return {
     address: address,
-    pubkey: pubkey,
+    pubkey: null,
     accountNumber: uint64FromProto(accountNumber).toNumber(),
     sequence: uint64FromProto(sequence).toNumber(),
   };

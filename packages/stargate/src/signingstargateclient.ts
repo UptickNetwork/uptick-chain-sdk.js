@@ -510,7 +510,6 @@ export class SigningStargateClient extends StargateClient {
       pubkey.typeUrl = "/cosmos.crypto.secp256k1.PubKey";
     }
 
-
     const txBodyEncodeObject: TxBodyEncodeObject = {
       typeUrl: "/cosmos.tx.v1beta1.TxBody",
       value: {

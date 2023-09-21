@@ -1,9 +1,9 @@
 {
-  "name": "@uptsmart/stargate",
-  "version": "0.27.13",
-  "description": "Utilities for uptick v0.2.7",
+  "name": "@uptsmart/cosmwasm-stargate",
+  "version": "0.27.4",
+  "description": "CosmWasm SDK",
   "contributors": [
-    "Simon Warta <webmaster128@users.noreply.github.com>"
+    "Will Clark <willclarktech@users.noreply.github.com>"
   ],
   "license": "Apache-2.0",
   "main": "build/index.js",
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cosmos/cosmjs/tree/main/packages/stargate"
+    "url": "https://github.com/cosmos/cosmjs/tree/main/packages/cosmwasm-stargate"
   },
   "publishConfig": {
     "access": "public",
@@ -24,10 +24,10 @@
   },
   "scripts": {
     "docs": "typedoc --options typedoc.js",
-    "lint": "eslint --max-warnings 0 \"./**/*.ts\" \"./*.js\"",
-    "lint-fix": "eslint --fix --max-warnings 0 \"./**/*.ts\" \"./*.js\"",
     "format": "prettier --write --loglevel warn \"./src/**/*.ts\"",
     "format-text": "prettier --write \"./*.md\"",
+    "lint": "eslint --max-warnings 0 \"./**/*.ts\" \"./*.js\"",
+    "lint-fix": "eslint --fix --max-warnings 0 \"./**/*.ts\" \"./*.js\"",
     "build": "rm -rf ./build && tsc",
     "build-or-skip": "[ -n \"$SKIP_BUILD\" ] || yarn build",
     "test-node": "yarn node jasmine-testrunner.js",
@@ -38,22 +38,20 @@
     "pack-web": "yarn build-or-skip && webpack --mode development --config webpack.web.config.js"
   },
   "dependencies": {
-    "@confio/ics23": "^0.6.3",
-    "@cosmjs/amino": "0.27.1",
-    "@cosmjs/encoding": "0.27.1",
-    "@cosmjs/math": "0.27.1",
-    "@cosmjs/stream": "0.27.1",
-    "@cosmjs/tendermint-rpc": "0.27.1",
-    "@cosmjs/utils": "0.27.1",
-    "@types/mocha": "^10.0.1",
-    "@uptsmart/proto-signing": "^0.27.7",
-    "cosmjs-types": "^0.4.0",
+    "@cosmjs/amino": "^0.27.1",
+    "@cosmjs/crypto": "^0.27.1",
+    "@cosmjs/encoding": "^0.27.1",
+    "@cosmjs/math": "^0.27.1",
+    "@uptsmart/proto-signing": "^0.27.8",
+    "@uptsmart/stargate": "^0.27.13",
+    "@cosmjs/tendermint-rpc": "^0.27.1",
+    "@cosmjs/utils": "^0.27.1",
+    "cosmjs-types": "^0.5.2",
     "long": "^4.0.0",
-    "protobufjs": "~6.10.2",
-    "xstream": "^11.14.0"
+    "pako": "^2.0.2"
+
   },
   "devDependencies": {
-    "@cosmjs/crypto": "0.27.1",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/eslint-plugin-prettier": "^3",
     "@types/jasmine": "^3.8",
@@ -62,6 +60,7 @@
     "@types/karma-jasmine-html-reporter": "^1",
     "@types/long": "^4.0.1",
     "@types/node": "^15.0.1",
+    "@types/pako": "^1.0.1",
     "@typescript-eslint/eslint-plugin": "^4.28",
     "@typescript-eslint/parser": "^4.28",
     "eslint": "^7.5",
