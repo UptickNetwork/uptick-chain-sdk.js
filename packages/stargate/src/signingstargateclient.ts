@@ -161,10 +161,12 @@ export const defaultRegistryTypes: ReadonlyArray<[string, GeneratedType]> = [
 
   ["/uptick.erc20.v1.MsgConvertERC20", erc20_tx_pb.MsgConvertERC20],
   ["/uptick.erc20.v1.MsgConvertCoin", erc20_tx_pb.MsgConvertCoin],
+  ["/uptick.erc20.v1.MsgTransferERC20", erc20_tx_pb.MsgTransferERC20],
 
   //xxl 02 list 
   ["/uptick.erc721.v1.MsgConvertERC721", erc721_tx_pb.MsgConvertERC721],
   ["/uptick.erc721.v1.MsgConvertNFT", erc721_tx_pb.MsgConvertNFT],
+  ["/uptick.erc721.v1.MsgTransferERC721", erc721_tx_pb.MsgTransferERC721],
 
   //xxl 03 list 
   ["/ibc.applications.nft_transfer.v1.MsgTransfer", nft_transfer_tx_pb.MsgTransfer],
@@ -172,6 +174,7 @@ export const defaultRegistryTypes: ReadonlyArray<[string, GeneratedType]> = [
   //xxl 04 list 
   ["/uptick.cw721.v1.MsgConvertCW721", cw721_tx_pb.MsgConvertCW721],
   ["/uptick.cw721.v1.MsgConvertNFT", cw721_tx_pb.MsgConvertNFT],
+  ["/uptick.cw721.v1.MsgTransferCW721", cw721_tx_pb.MsgTransferCW721],
 
 ];
 
