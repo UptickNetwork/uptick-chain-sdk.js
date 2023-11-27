@@ -21,6 +21,10 @@ grpc.web = require('grpc-web');
 
 
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js')
+
+var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js')
+
+var ibc_core_client_v1_client_pb = require('../../../ibc/core/client/v1/client_pb.js')
 const proto = {};
 proto.uptick = {};
 proto.uptick.erc721 = {};
@@ -197,6 +201,67 @@ proto.uptick.erc721.v1.MsgPromiseClient.prototype.convertERC721 =
       request,
       metadata || {},
       methodDescriptor_Msg_ConvertERC721);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.uptick.erc721.v1.MsgTransferERC721,
+ *   !proto.uptick.erc721.v1.MsgTransferERC721Response>}
+ */
+const methodDescriptor_Msg_TransferERC721 = new grpc.web.MethodDescriptor(
+  '/uptick.erc721.v1.Msg/TransferERC721',
+  grpc.web.MethodType.UNARY,
+  proto.uptick.erc721.v1.MsgTransferERC721,
+  proto.uptick.erc721.v1.MsgTransferERC721Response,
+  /**
+   * @param {!proto.uptick.erc721.v1.MsgTransferERC721} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.uptick.erc721.v1.MsgTransferERC721Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.uptick.erc721.v1.MsgTransferERC721} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.uptick.erc721.v1.MsgTransferERC721Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.uptick.erc721.v1.MsgTransferERC721Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.uptick.erc721.v1.MsgClient.prototype.transferERC721 =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/uptick.erc721.v1.Msg/TransferERC721',
+      request,
+      metadata || {},
+      methodDescriptor_Msg_TransferERC721,
+      callback);
+};
+
+
+/**
+ * @param {!proto.uptick.erc721.v1.MsgTransferERC721} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.uptick.erc721.v1.MsgTransferERC721Response>}
+ *     Promise that resolves to the response
+ */
+proto.uptick.erc721.v1.MsgPromiseClient.prototype.transferERC721 =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/uptick.erc721.v1.Msg/TransferERC721',
+      request,
+      metadata || {},
+      methodDescriptor_Msg_TransferERC721);
 };
 
 

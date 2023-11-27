@@ -26,7 +26,8 @@
     "format-shell": "shfmt -w scripts packages",
     "lint": "yarn workspaces foreach --topological-dev --parallel --verbose run lint",
     "lint-fix": "yarn workspaces foreach --topological-dev --parallel --verbose run lint-fix",
-    "test": "yarn workspaces foreach --topological-dev --parallel --verbose run test",
+    "test": "node ./node_modules/mocha/bin/mocha",
+    "test-unit": "yarn workspaces foreach --topological-dev --parallel --verbose run test",
     "test-firefox": "yarn workspaces foreach --topological-dev --parallel --verbose run test-firefox",
     "test-chrome": "yarn workspaces foreach --topological-dev --parallel --verbose run test-chrome",
     "coverage": "yarn workspaces foreach --topological-dev --parallel --verbose run coverage",
@@ -40,13 +41,19 @@
   "devDependencies": {
     "@cosmjs/amino": "0.27.1",
     "@cosmjs/cosmwasm-stargate": "0.27.1",
+    "@cosmjs/crypto": "0.27.1",
     "@cosmjs/encoding": "0.27.1",
-
     "@uptsmart/proto-signing": "0.27.6",
     "@uptsmart/stargate": "0.27.7",
-    
+    "chai": "4.3.4",
+    "chai-as-promised": "^7.1.1",
     "eslint": "^7.5",
+    "mocha": "^8.2.1",
     "prettier": "^2.4.1",
     "typescript": "~4.4"
+  },
+  "dependencies": {
+    "@hanchon/evmos-ts-wallet": "^0.2.0",
+    "@keplr-wallet/crypto": "^0.12.44"
   }
 }

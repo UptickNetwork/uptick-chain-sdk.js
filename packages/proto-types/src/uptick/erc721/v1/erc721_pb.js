@@ -17,6 +17,8 @@ var global = (function() { return this || window || global || self || Function('
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
 goog.object.extend(proto, gogoproto_gogo_pb);
+var cosmos_nft_v1beta1_nft_pb = require('../../../cosmos/nft/v1beta1/nft_pb.js');
+goog.object.extend(proto, cosmos_nft_v1beta1_nft_pb);
 goog.exportSymbol('proto.uptick.erc721.v1.Owner', null, global);
 goog.exportSymbol('proto.uptick.erc721.v1.TokenPair', null, global);
 goog.exportSymbol('proto.uptick.erc721.v1.UIDPair', null, global);

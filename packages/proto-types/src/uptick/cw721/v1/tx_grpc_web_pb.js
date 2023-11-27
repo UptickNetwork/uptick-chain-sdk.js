@@ -23,6 +23,8 @@ grpc.web = require('grpc-web');
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js')
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js')
+
+var ibc_core_client_v1_client_pb = require('../../../ibc/core/client/v1/client_pb.js')
 const proto = {};
 proto.uptick = {};
 proto.uptick.cw721 = {};
@@ -199,6 +201,67 @@ proto.uptick.cw721.v1.MsgPromiseClient.prototype.convertCW721 =
       request,
       metadata || {},
       methodDescriptor_Msg_ConvertCW721);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.uptick.cw721.v1.MsgTransferCW721,
+ *   !proto.uptick.cw721.v1.MsgTransferCW721Response>}
+ */
+const methodDescriptor_Msg_TransferCW721 = new grpc.web.MethodDescriptor(
+  '/uptick.cw721.v1.Msg/TransferCW721',
+  grpc.web.MethodType.UNARY,
+  proto.uptick.cw721.v1.MsgTransferCW721,
+  proto.uptick.cw721.v1.MsgTransferCW721Response,
+  /**
+   * @param {!proto.uptick.cw721.v1.MsgTransferCW721} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.uptick.cw721.v1.MsgTransferCW721Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.uptick.cw721.v1.MsgTransferCW721} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.uptick.cw721.v1.MsgTransferCW721Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.uptick.cw721.v1.MsgTransferCW721Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.uptick.cw721.v1.MsgClient.prototype.transferCW721 =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/uptick.cw721.v1.Msg/TransferCW721',
+      request,
+      metadata || {},
+      methodDescriptor_Msg_TransferCW721,
+      callback);
+};
+
+
+/**
+ * @param {!proto.uptick.cw721.v1.MsgTransferCW721} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.uptick.cw721.v1.MsgTransferCW721Response>}
+ *     Promise that resolves to the response
+ */
+proto.uptick.cw721.v1.MsgPromiseClient.prototype.transferCW721 =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/uptick.cw721.v1.Msg/TransferCW721',
+      request,
+      metadata || {},
+      methodDescriptor_Msg_TransferCW721);
 };
 
 

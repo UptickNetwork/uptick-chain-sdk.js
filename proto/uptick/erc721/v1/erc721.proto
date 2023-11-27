@@ -2,6 +2,7 @@ syntax = "proto3";
 package uptick.erc721.v1;
 
 import "gogoproto/gogo.proto";
+import "cosmos/nft/v1beta1/nft.proto";
 
 option go_package = "github.com/UptickNetwork/uptick/x/erc721/types";
 
@@ -35,3 +36,4 @@ message UIDPair {
   // cosmos nft class ID to be mapped to + nftId
   string class_did = 2;
 }
+
