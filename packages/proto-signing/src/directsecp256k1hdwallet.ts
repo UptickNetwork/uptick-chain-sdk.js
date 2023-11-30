@@ -11,8 +11,9 @@ import {
   Slip10,
   Slip10Curve,
   stringToPath,
+  keccak256,
 } from "@cosmjs/crypto";
-import { Bech32, fromBase64, fromUtf8, toBase64, toUtf8 } from "@cosmjs/encoding";
+import { Bech32, fromBase64, fromUtf8, toBase64, toUtf8,fromHex, toHex  } from "@cosmjs/encoding";
 import { assert, isNonNullObject } from "@cosmjs/utils";
 import { SignDoc } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 
@@ -333,20 +334,40 @@ export class DirectSecp256k1HdWallet implements OfflineDirectSigner {
     return JSON.stringify(out);
   }
 
-  private async getKeyPair(hdPath: HdPath): Promise<Secp256k1Keypair> {
+  private async getKeyPair(hdPath: HdPath, prefix:string): Promise<Secp256k1Keypair> {
     const { privkey } = Slip10.derivePath(Slip10Curve.Secp256k1, this.seed, hdPath);
+
     const { pubkey } = await Secp256k1.makeKeypair(privkey);
-    return {
-      privkey: privkey,
-      pubkey: Secp256k1.compressPubkey(pubkey),
-    };
+    if(prefix=='uptick'){
+      return {
+        privkey: privkey,
+        pubkey: pubkey,
+      };
+    }else{
+      return {
+        privkey: privkey,
+        pubkey: Secp256k1.compressPubkey(pubkey),
+      };
+    }
+
   }
 
   private async getAccountsWithPrivkeys(): Promise<readonly AccountDataWithPrivkey[]> {
     return Promise.all(
       this.accounts.map(async ({ hdPath, prefix }) => {
-        const { privkey, pubkey } = await this.getKeyPair(hdPath);
-        const address = Bech32.encode(prefix, rawSecp256k1PubkeyToRawAddress(pubkey));
+        const { privkey, pubkey } = await this.getKeyPair(hdPath,prefix);
+        let address="";
+        if(prefix=='uptick'){
+          const address0x = `0x${toHex(keccak256(pubkey.slice(1)).slice(-20))}`;
+         
+          let wordsbyte = keccak256(pubkey.slice(1)).slice(-20);
+
+          address = Bech32.encode(prefix,wordsbyte);
+          console.log("uptickAddress=="+address)
+        }else{
+          address = Bech32.encode(prefix, rawSecp256k1PubkeyToRawAddress(pubkey));
+        }
+
         return {
           algo: "secp256k1" as const,
           privkey: privkey,
