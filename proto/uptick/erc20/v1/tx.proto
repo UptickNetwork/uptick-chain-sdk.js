@@ -80,9 +80,7 @@ message MsgTransferERC20 {
   string cosmos_receiver = 6;
   // Timeout height relative to the current block height.
   // The timeout is disabled when set to 0.
-  ibc.core.client.v1.Height timeout_height = 7 [
-    (gogoproto.nullable) = false
-  ];
+  uint64 timeout_height = 7;
   // Timeout timestamp in absolute nanoseconds since unix epoch.
   // The timeout is disabled when set to 0.
   uint64 timeout_timestamp = 8;

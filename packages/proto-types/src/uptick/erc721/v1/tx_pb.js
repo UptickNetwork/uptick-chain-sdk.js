@@ -122,7 +122,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.uptick.erc721.v1.MsgTransferERC721 = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.uptick.erc721.v1.MsgTransferERC721.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.uptick.erc721.v1.MsgTransferERC721, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1006,13 +1006,6 @@ proto.uptick.erc721.v1.MsgConvertERC721Response.serializeBinaryToWriter = functi
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.uptick.erc721.v1.MsgTransferERC721.repeatedFields_ = [2,6];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1045,14 +1038,14 @@ proto.uptick.erc721.v1.MsgTransferERC721.prototype.toObject = function(opt_inclu
 proto.uptick.erc721.v1.MsgTransferERC721.toObject = function(includeInstance, msg) {
   var f, obj = {
     evmContractAddress: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    evmTokenIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    evmTokenIds: jspb.Message.getFieldWithDefault(msg, 2, ""),
     sourcePort: jspb.Message.getFieldWithDefault(msg, 3, ""),
     sourceChannel: jspb.Message.getFieldWithDefault(msg, 4, ""),
     classId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    cosmosTokenIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+    cosmosTokenIds: jspb.Message.getFieldWithDefault(msg, 6, ""),
     evmSender: jspb.Message.getFieldWithDefault(msg, 7, ""),
     cosmosReceiver: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    timeoutHeight: (f = msg.getTimeoutHeight()) && ibc_core_client_v1_client_pb.Height.toObject(includeInstance, f),
+    timeoutHeight: jspb.Message.getFieldWithDefault(msg, 9, 0),
     timeoutTimestamp: jspb.Message.getFieldWithDefault(msg, 10, 0),
     memo: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
@@ -1097,7 +1090,7 @@ proto.uptick.erc721.v1.MsgTransferERC721.deserializeBinaryFromReader = function(
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.addEvmTokenIds(value);
+      msg.setEvmTokenIds(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -1113,7 +1106,7 @@ proto.uptick.erc721.v1.MsgTransferERC721.deserializeBinaryFromReader = function(
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.addCosmosTokenIds(value);
+      msg.setCosmosTokenIds(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
@@ -1124,8 +1117,7 @@ proto.uptick.erc721.v1.MsgTransferERC721.deserializeBinaryFromReader = function(
       msg.setCosmosReceiver(value);
       break;
     case 9:
-      var value = new ibc_core_client_v1_client_pb.Height;
-      reader.readMessage(value,ibc_core_client_v1_client_pb.Height.deserializeBinaryFromReader);
+      var value = /** @type {number} */ (reader.readUint64());
       msg.setTimeoutHeight(value);
       break;
     case 10:
@@ -1172,9 +1164,9 @@ proto.uptick.erc721.v1.MsgTransferERC721.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getEvmTokenIdsList();
+  f = message.getEvmTokenIds();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeString(
       2,
       f
     );
@@ -1200,9 +1192,9 @@ proto.uptick.erc721.v1.MsgTransferERC721.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getCosmosTokenIdsList();
+  f = message.getCosmosTokenIds();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeString(
       6,
       f
     );
@@ -1222,11 +1214,10 @@ proto.uptick.erc721.v1.MsgTransferERC721.serializeBinaryToWriter = function(mess
     );
   }
   f = message.getTimeoutHeight();
-  if (f != null) {
-    writer.writeMessage(
+  if (f !== 0) {
+    writer.writeUint64(
       9,
-      f,
-      ibc_core_client_v1_client_pb.Height.serializeBinaryToWriter
+      f
     );
   }
   f = message.getTimeoutTimestamp();
@@ -1265,39 +1256,20 @@ proto.uptick.erc721.v1.MsgTransferERC721.prototype.setEvmContractAddress = funct
 
 
 /**
- * repeated string evm_token_ids = 2;
- * @return {!Array<string>}
+ * optional string evm_token_ids = 2;
+ * @return {string}
  */
-proto.uptick.erc721.v1.MsgTransferERC721.prototype.getEvmTokenIdsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.uptick.erc721.v1.MsgTransferERC721} returns this
- */
-proto.uptick.erc721.v1.MsgTransferERC721.prototype.setEvmTokenIdsList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
+proto.uptick.erc721.v1.MsgTransferERC721.prototype.getEvmTokenIds = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @param {number=} opt_index
  * @return {!proto.uptick.erc721.v1.MsgTransferERC721} returns this
  */
-proto.uptick.erc721.v1.MsgTransferERC721.prototype.addEvmTokenIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.uptick.erc721.v1.MsgTransferERC721} returns this
- */
-proto.uptick.erc721.v1.MsgTransferERC721.prototype.clearEvmTokenIdsList = function() {
-  return this.setEvmTokenIdsList([]);
+proto.uptick.erc721.v1.MsgTransferERC721.prototype.setEvmTokenIds = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1356,39 +1328,20 @@ proto.uptick.erc721.v1.MsgTransferERC721.prototype.setClassId = function(value) 
 
 
 /**
- * repeated string cosmos_token_ids = 6;
- * @return {!Array<string>}
+ * optional string cosmos_token_ids = 6;
+ * @return {string}
  */
-proto.uptick.erc721.v1.MsgTransferERC721.prototype.getCosmosTokenIdsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.uptick.erc721.v1.MsgTransferERC721} returns this
- */
-proto.uptick.erc721.v1.MsgTransferERC721.prototype.setCosmosTokenIdsList = function(value) {
-  return jspb.Message.setField(this, 6, value || []);
+proto.uptick.erc721.v1.MsgTransferERC721.prototype.getCosmosTokenIds = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
  * @param {string} value
- * @param {number=} opt_index
  * @return {!proto.uptick.erc721.v1.MsgTransferERC721} returns this
  */
-proto.uptick.erc721.v1.MsgTransferERC721.prototype.addCosmosTokenIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.uptick.erc721.v1.MsgTransferERC721} returns this
- */
-proto.uptick.erc721.v1.MsgTransferERC721.prototype.clearCosmosTokenIdsList = function() {
-  return this.setCosmosTokenIdsList([]);
+proto.uptick.erc721.v1.MsgTransferERC721.prototype.setCosmosTokenIds = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -1429,39 +1382,20 @@ proto.uptick.erc721.v1.MsgTransferERC721.prototype.setCosmosReceiver = function(
 
 
 /**
- * optional ibc.core.client.v1.Height timeout_height = 9;
- * @return {?proto.ibc.core.client.v1.Height}
+ * optional uint64 timeout_height = 9;
+ * @return {number}
  */
 proto.uptick.erc721.v1.MsgTransferERC721.prototype.getTimeoutHeight = function() {
-  return /** @type{?proto.ibc.core.client.v1.Height} */ (
-    jspb.Message.getWrapperField(this, ibc_core_client_v1_client_pb.Height, 9));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
 /**
- * @param {?proto.ibc.core.client.v1.Height|undefined} value
+ * @param {number} value
  * @return {!proto.uptick.erc721.v1.MsgTransferERC721} returns this
-*/
+ */
 proto.uptick.erc721.v1.MsgTransferERC721.prototype.setTimeoutHeight = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.uptick.erc721.v1.MsgTransferERC721} returns this
- */
-proto.uptick.erc721.v1.MsgTransferERC721.prototype.clearTimeoutHeight = function() {
-  return this.setTimeoutHeight(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.uptick.erc721.v1.MsgTransferERC721.prototype.hasTimeoutHeight = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 

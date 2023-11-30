@@ -71,7 +71,7 @@ message MsgTransferERC721 {
 
   string evm_contract_address = 1;
   // tokenID to convert
-  repeated string evm_token_ids = 2;
+  string evm_token_ids = 2;
 
   // the port on which the packet will be sent
   string source_port = 3;
@@ -80,16 +80,14 @@ message MsgTransferERC721 {
   // the class_id of tokens to be transferred
   string class_id = 5;
   // the non fungible tokens to be transferred
-  repeated string cosmos_token_ids = 6;
+  string cosmos_token_ids = 6;
   // the sender address
   string evm_sender = 7;
   // the recipient address on the destination chain
   string cosmos_receiver = 8;
   // Timeout height relative to the current block height.
   // The timeout is disabled when set to 0.
-  ibc.core.client.v1.Height timeout_height = 9 [
-    (gogoproto.nullable) = false
-  ];
+  uint64 timeout_height = 9;
   // Timeout timestamp in absolute nanoseconds since unix epoch.
   // The timeout is disabled when set to 0.
   uint64 timeout_timestamp = 10;

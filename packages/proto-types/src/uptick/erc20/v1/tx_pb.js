@@ -826,7 +826,7 @@ proto.uptick.erc20.v1.MsgTransferERC20.toObject = function(includeInstance, msg)
     sourceChannel: jspb.Message.getFieldWithDefault(msg, 4, ""),
     evmSender: jspb.Message.getFieldWithDefault(msg, 5, ""),
     cosmosReceiver: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    timeoutHeight: (f = msg.getTimeoutHeight()) && ibc_core_client_v1_client_pb.Height.toObject(includeInstance, f),
+    timeoutHeight: jspb.Message.getFieldWithDefault(msg, 7, 0),
     timeoutTimestamp: jspb.Message.getFieldWithDefault(msg, 8, 0),
     memo: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
@@ -890,8 +890,7 @@ proto.uptick.erc20.v1.MsgTransferERC20.deserializeBinaryFromReader = function(ms
       msg.setCosmosReceiver(value);
       break;
     case 7:
-      var value = new ibc_core_client_v1_client_pb.Height;
-      reader.readMessage(value,ibc_core_client_v1_client_pb.Height.deserializeBinaryFromReader);
+      var value = /** @type {number} */ (reader.readUint64());
       msg.setTimeoutHeight(value);
       break;
     case 8:
@@ -974,11 +973,10 @@ proto.uptick.erc20.v1.MsgTransferERC20.serializeBinaryToWriter = function(messag
     );
   }
   f = message.getTimeoutHeight();
-  if (f != null) {
-    writer.writeMessage(
+  if (f !== 0) {
+    writer.writeUint64(
       7,
-      f,
-      ibc_core_client_v1_client_pb.Height.serializeBinaryToWriter
+      f
     );
   }
   f = message.getTimeoutTimestamp();
@@ -1107,39 +1105,20 @@ proto.uptick.erc20.v1.MsgTransferERC20.prototype.setCosmosReceiver = function(va
 
 
 /**
- * optional ibc.core.client.v1.Height timeout_height = 7;
- * @return {?proto.ibc.core.client.v1.Height}
+ * optional uint64 timeout_height = 7;
+ * @return {number}
  */
 proto.uptick.erc20.v1.MsgTransferERC20.prototype.getTimeoutHeight = function() {
-  return /** @type{?proto.ibc.core.client.v1.Height} */ (
-    jspb.Message.getWrapperField(this, ibc_core_client_v1_client_pb.Height, 7));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
 /**
- * @param {?proto.ibc.core.client.v1.Height|undefined} value
+ * @param {number} value
  * @return {!proto.uptick.erc20.v1.MsgTransferERC20} returns this
-*/
+ */
 proto.uptick.erc20.v1.MsgTransferERC20.prototype.setTimeoutHeight = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.uptick.erc20.v1.MsgTransferERC20} returns this
- */
-proto.uptick.erc20.v1.MsgTransferERC20.prototype.clearTimeoutHeight = function() {
-  return this.setTimeoutHeight(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.uptick.erc20.v1.MsgTransferERC20.prototype.hasTimeoutHeight = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
