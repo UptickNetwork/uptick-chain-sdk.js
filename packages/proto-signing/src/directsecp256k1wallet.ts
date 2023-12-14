@@ -1,5 +1,5 @@
 import { encodeSecp256k1Signature, rawSecp256k1PubkeyToRawAddress } from "@cosmjs/amino";
-import { Secp256k1, sha256 } from "@cosmjs/crypto";
+import { Secp256k1, sha256,keccak256 } from "@cosmjs/crypto";
 import { Bech32 } from "@cosmjs/encoding";
 import { SignDoc } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 
@@ -52,7 +52,8 @@ export class DirectSecp256k1Wallet implements OfflineDirectSigner {
     if (address !== this.address) {
       throw new Error(`Address ${address} not found in wallet`);
     }
-    const hashedMessage = sha256(signBytes);
+    // const hashedMessage = sha256(signBytes);
+    const hashedMessage = keccak256(signBytes);
     const signature = await Secp256k1.createSignature(hashedMessage, this.privkey);
     const signatureBytes = new Uint8Array([...signature.r(32), ...signature.s(32)]);
     const stdSignature = encodeSecp256k1Signature(this.pubkey, signatureBytes);

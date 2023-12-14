@@ -276,7 +276,8 @@ export class DirectSecp256k1HdWallet implements OfflineDirectSigner {
     }
     const { privkey, pubkey } = account;
     const signBytes = makeSignBytes(signDoc);
-    const hashedMessage = sha256(signBytes);
+   // const hashedMessage = sha256(signBytes);
+    const hashedMessage = keccak256(signBytes);
     const signature = await Secp256k1.createSignature(hashedMessage, privkey);
     const signatureBytes = new Uint8Array([...signature.r(32), ...signature.s(32)]);
     const stdSignature = encodeSecp256k1Signature(pubkey, signatureBytes);
