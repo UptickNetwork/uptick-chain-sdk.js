@@ -146,8 +146,8 @@ export class Registry {
     }
     const type = this.lookupTypeWithError(typeUrl);
 
-    console.log("xxl 00 encode");
-    console.log(type);
+    // console.log("xxl 00 encode");
+    // console.log(type);
 
     if(typeUrl.indexOf("uptick") != -1 || typeUrl.indexOf("nft_transfer") != -1){
 

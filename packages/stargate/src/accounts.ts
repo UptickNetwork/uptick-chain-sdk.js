@@ -34,11 +34,11 @@ function accountFromBaseAccount(input: BaseAccount): Account {
 
   const { address, pubKey, accountNumber, sequence } = input;
 
-  console.log("xxl 00 accountFromBaseAccount");
-  console.log([address, pubKey, accountNumber, sequence]);
-  // const pubkey = decodePubkey(pubKey);
+  // console.log("xxl 00 accountFromBaseAccount");
+  // console.log([address, pubKey, accountNumber, sequence]);
+  // // const pubkey = decodePubkey(pubKey);
 
-  console.log("xxl 00 accountFromBaseAccount");
+  // console.log("xxl 00 accountFromBaseAccount");
   // console.log(pubkey);
   
   return {
@@ -94,11 +94,11 @@ export function accountFromAny(input: Any): Account {
     //xxl 00 add accounts case
     case '/ethermint.types.v1.EthAccount':{
 
-      console.log("xxl 00 /ethermint.types.v1.EthAccount is: 111 ",value);
+      // console.log("xxl 00 /ethermint.types.v1.EthAccount is: 111 ",value);
       const accountObj = auth_auth_pb.EthAccount.deserializeBinary(value)?.toObject();
-      console.log("xxl 00 accountObj",accountObj);
+      // console.log("xxl 00 accountObj",accountObj);
       const baseAccount = accountObj.baseAccount;
-      console.log("xxl 00 baseAccount");
+      // console.log("xxl 00 baseAccount");
       assert(baseAccount);
       return accountFromBaseAccount(baseAccount);
     }
