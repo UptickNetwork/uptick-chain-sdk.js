@@ -22,7 +22,7 @@ var global = (function() {
 }.call(null));
 
 var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
-goog.object.extend(proto, google_protobuf_descriptor_pb);
+
 goog.exportSymbol('proto.cosmos.orm.v1alpha1.SchemaDescriptor', null, global);
 goog.exportSymbol('proto.cosmos.orm.v1alpha1.SchemaDescriptor.FileEntry', null, global);
 goog.exportSymbol('proto.cosmos.orm.v1alpha1.SchemaDescriptor.ModuleEntry', null, global);

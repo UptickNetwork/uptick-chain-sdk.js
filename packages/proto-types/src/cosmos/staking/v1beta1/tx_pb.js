@@ -22,19 +22,19 @@ var global = (function() {
 }.call(null));
 
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-goog.object.extend(proto, google_protobuf_any_pb);
+
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-goog.object.extend(proto, google_protobuf_timestamp_pb);
+
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var cosmos_proto_cosmos_pb = require('../../../cosmos_proto/cosmos_pb.js');
-goog.object.extend(proto, cosmos_proto_cosmos_pb);
+
 var cosmos_base_v1beta1_coin_pb = require('../../../cosmos/base/v1beta1/coin_pb.js');
-goog.object.extend(proto, cosmos_base_v1beta1_coin_pb);
+
 var cosmos_staking_v1beta1_staking_pb = require('../../../cosmos/staking/v1beta1/staking_pb.js');
-goog.object.extend(proto, cosmos_staking_v1beta1_staking_pb);
+
 var cosmos_msg_v1_msg_pb = require('../../../cosmos/msg/v1/msg_pb.js');
-goog.object.extend(proto, cosmos_msg_v1_msg_pb);
+
 goog.exportSymbol('proto.cosmos.staking.v1beta1.MsgBeginRedelegate', null, global);
 goog.exportSymbol('proto.cosmos.staking.v1beta1.MsgBeginRedelegateResponse', null, global);
 goog.exportSymbol('proto.cosmos.staking.v1beta1.MsgCreateValidator', null, global);

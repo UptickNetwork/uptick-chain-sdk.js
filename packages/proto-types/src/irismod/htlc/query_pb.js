@@ -22,11 +22,11 @@ var global = (function() {
 }.call(null));
 
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
-goog.object.extend(proto, google_api_annotations_pb);
+
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var irismod_htlc_htlc_pb = require('../../irismod/htlc/htlc_pb.js');
-goog.object.extend(proto, irismod_htlc_htlc_pb);
+
 goog.exportSymbol('proto.irismod.htlc.QueryAssetSuppliesRequest', null, global);
 goog.exportSymbol('proto.irismod.htlc.QueryAssetSuppliesResponse', null, global);
 goog.exportSymbol('proto.irismod.htlc.QueryAssetSupplyRequest', null, global);

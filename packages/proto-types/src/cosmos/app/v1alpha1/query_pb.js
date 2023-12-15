@@ -16,7 +16,7 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var cosmos_app_v1alpha1_config_pb = require('../../../cosmos/app/v1alpha1/config_pb.js');
-goog.object.extend(proto, cosmos_app_v1alpha1_config_pb);
+
 goog.exportSymbol('proto.cosmos.app.v1alpha1.QueryConfigRequest', null, global);
 goog.exportSymbol('proto.cosmos.app.v1alpha1.QueryConfigResponse', null, global);
 /**

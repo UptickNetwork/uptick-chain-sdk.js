@@ -22,7 +22,7 @@ var global = (function() {
 }.call(null));
 
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 goog.exportSymbol('proto.ethermint.crypto.v1.ethsecp256k1.PrivKey', null, global);
 goog.exportSymbol('proto.ethermint.crypto.v1.ethsecp256k1.PubKey', null, global);
 /**

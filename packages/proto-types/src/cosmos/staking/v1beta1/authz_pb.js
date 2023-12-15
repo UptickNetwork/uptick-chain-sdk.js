@@ -22,11 +22,11 @@ var global = (function() {
 }.call(null));
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var cosmos_proto_cosmos_pb = require('../../../cosmos_proto/cosmos_pb.js');
-goog.object.extend(proto, cosmos_proto_cosmos_pb);
+
 var cosmos_base_v1beta1_coin_pb = require('../../../cosmos/base/v1beta1/coin_pb.js');
-goog.object.extend(proto, cosmos_base_v1beta1_coin_pb);
+
 goog.exportSymbol('proto.cosmos.staking.v1beta1.AuthorizationType', null, global);
 goog.exportSymbol('proto.cosmos.staking.v1beta1.StakeAuthorization', null, global);
 goog.exportSymbol('proto.cosmos.staking.v1beta1.StakeAuthorization.Validators', null, global);

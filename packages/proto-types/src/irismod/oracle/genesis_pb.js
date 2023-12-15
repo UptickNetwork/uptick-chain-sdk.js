@@ -22,11 +22,11 @@ var global = (function() {
 }.call(null));
 
 var irismod_oracle_oracle_pb = require('../../irismod/oracle/oracle_pb.js');
-goog.object.extend(proto, irismod_oracle_oracle_pb);
+
 var irismod_service_service_pb = require('../../irismod/service/service_pb.js');
-goog.object.extend(proto, irismod_service_service_pb);
+
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 goog.exportSymbol('proto.irismod.oracle.FeedEntry', null, global);
 goog.exportSymbol('proto.irismod.oracle.GenesisState', null, global);
 /**

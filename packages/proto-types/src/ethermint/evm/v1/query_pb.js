@@ -22,17 +22,17 @@ var global = (function() {
 }.call(null));
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var cosmos_base_query_v1beta1_pagination_pb = require('../../../cosmos/base/query/v1beta1/pagination_pb.js');
-goog.object.extend(proto, cosmos_base_query_v1beta1_pagination_pb);
+
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
-goog.object.extend(proto, google_api_annotations_pb);
+
 var ethermint_evm_v1_evm_pb = require('../../../ethermint/evm/v1/evm_pb.js');
-goog.object.extend(proto, ethermint_evm_v1_evm_pb);
+
 var ethermint_evm_v1_tx_pb = require('../../../ethermint/evm/v1/tx_pb.js');
-goog.object.extend(proto, ethermint_evm_v1_tx_pb);
+
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-goog.object.extend(proto, google_protobuf_timestamp_pb);
+
 goog.exportSymbol('proto.ethermint.evm.v1.EstimateGasResponse', null, global);
 goog.exportSymbol('proto.ethermint.evm.v1.EthCallRequest', null, global);
 goog.exportSymbol('proto.ethermint.evm.v1.QueryAccountRequest', null, global);

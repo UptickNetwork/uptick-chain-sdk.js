@@ -22,13 +22,13 @@ var global = (function() {
 }.call(null));
 
 var cosmos_feegrant_v1beta1_feegrant_pb = require('../../../cosmos/feegrant/v1beta1/feegrant_pb.js');
-goog.object.extend(proto, cosmos_feegrant_v1beta1_feegrant_pb);
+
 var cosmos_base_query_v1beta1_pagination_pb = require('../../../cosmos/base/query/v1beta1/pagination_pb.js');
-goog.object.extend(proto, cosmos_base_query_v1beta1_pagination_pb);
+
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
-goog.object.extend(proto, google_api_annotations_pb);
+
 var cosmos_proto_cosmos_pb = require('../../../cosmos_proto/cosmos_pb.js');
-goog.object.extend(proto, cosmos_proto_cosmos_pb);
+
 goog.exportSymbol('proto.cosmos.feegrant.v1beta1.QueryAllowanceRequest', null, global);
 goog.exportSymbol('proto.cosmos.feegrant.v1beta1.QueryAllowanceResponse', null, global);
 goog.exportSymbol('proto.cosmos.feegrant.v1beta1.QueryAllowancesByGranterRequest', null, global);

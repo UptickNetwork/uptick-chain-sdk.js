@@ -22,11 +22,11 @@ var global = (function() {
 }.call(null));
 
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-goog.object.extend(proto, google_protobuf_any_pb);
+
 var cosmos_crypto_hd_v1_hd_pb = require('../../../../cosmos/crypto/hd/v1/hd_pb.js');
-goog.object.extend(proto, cosmos_crypto_hd_v1_hd_pb);
+
 goog.exportSymbol('proto.cosmos.crypto.keyring.v1.Record', null, global);
 goog.exportSymbol('proto.cosmos.crypto.keyring.v1.Record.ItemCase', null, global);
 goog.exportSymbol('proto.cosmos.crypto.keyring.v1.Record.Ledger', null, global);

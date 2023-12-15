@@ -22,15 +22,15 @@ var global = (function() {
 }.call(null));
 
 var irismod_oracle_oracle_pb = require('../../irismod/oracle/oracle_pb.js');
-goog.object.extend(proto, irismod_oracle_oracle_pb);
+
 var irismod_service_service_pb = require('../../irismod/service/service_pb.js');
-goog.object.extend(proto, irismod_service_service_pb);
+
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
-goog.object.extend(proto, google_api_annotations_pb);
+
 var cosmos_base_v1beta1_coin_pb = require('../../cosmos/base/v1beta1/coin_pb.js');
-goog.object.extend(proto, cosmos_base_v1beta1_coin_pb);
+
 goog.exportSymbol('proto.irismod.oracle.FeedContext', null, global);
 goog.exportSymbol('proto.irismod.oracle.QueryFeedRequest', null, global);
 goog.exportSymbol('proto.irismod.oracle.QueryFeedResponse', null, global);

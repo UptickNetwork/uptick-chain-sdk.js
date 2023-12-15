@@ -22,9 +22,9 @@ var global = (function() {
 }.call(null));
 
 var irismod_random_random_pb = require('../../irismod/random/random_pb.js');
-goog.object.extend(proto, irismod_random_random_pb);
+
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 goog.exportSymbol('proto.irismod.random.GenesisState', null, global);
 goog.exportSymbol('proto.irismod.random.Requests', null, global);
 /**

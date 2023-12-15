@@ -16,7 +16,7 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-goog.object.extend(proto, google_protobuf_any_pb);
+
 goog.exportSymbol('proto.cosmos.app.v1alpha1.Config', null, global);
 goog.exportSymbol('proto.cosmos.app.v1alpha1.ModuleConfig', null, global);
 /**

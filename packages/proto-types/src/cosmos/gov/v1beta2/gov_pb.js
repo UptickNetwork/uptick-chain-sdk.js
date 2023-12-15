@@ -24,15 +24,15 @@ var global = (function() {
 var cosmos_base_v1beta1_coin_pb = require('../../../cosmos/base/v1beta1/coin_pb.js');
 goog.object.extend(proto, cosmos_base_v1beta1_coin_pb);
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-goog.object.extend(proto, google_protobuf_any_pb);
+
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 goog.object.extend(proto, google_protobuf_duration_pb);
 var cosmos_proto_cosmos_pb = require('../../../cosmos_proto/cosmos_pb.js');
-goog.object.extend(proto, cosmos_proto_cosmos_pb);
+
 goog.exportSymbol('proto.cosmos.gov.v1beta2.Deposit', null, global);
 goog.exportSymbol('proto.cosmos.gov.v1beta2.DepositParams', null, global);
 goog.exportSymbol('proto.cosmos.gov.v1beta2.Proposal', null, global);

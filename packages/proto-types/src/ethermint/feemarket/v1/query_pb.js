@@ -22,11 +22,11 @@ var global = (function() {
 }.call(null));
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
-goog.object.extend(proto, google_api_annotations_pb);
+
 var ethermint_feemarket_v1_feemarket_pb = require('../../../ethermint/feemarket/v1/feemarket_pb.js');
-goog.object.extend(proto, ethermint_feemarket_v1_feemarket_pb);
+
 goog.exportSymbol('proto.ethermint.feemarket.v1.QueryBaseFeeRequest', null, global);
 goog.exportSymbol('proto.ethermint.feemarket.v1.QueryBaseFeeResponse', null, global);
 goog.exportSymbol('proto.ethermint.feemarket.v1.QueryBlockGasRequest', null, global);

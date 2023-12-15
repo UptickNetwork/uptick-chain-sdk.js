@@ -22,7 +22,7 @@ var global = (function() {
 }.call(null));
 
 var cosmos_proto_cosmos_pb = require('../../../cosmos_proto/cosmos_pb.js');
-goog.object.extend(proto, cosmos_proto_cosmos_pb);
+
 goog.exportSymbol('proto.cosmos.group.v1beta1.EventCreateGroup', null, global);
 goog.exportSymbol('proto.cosmos.group.v1beta1.EventCreateGroupPolicy', null, global);
 goog.exportSymbol('proto.cosmos.group.v1beta1.EventExec', null, global);

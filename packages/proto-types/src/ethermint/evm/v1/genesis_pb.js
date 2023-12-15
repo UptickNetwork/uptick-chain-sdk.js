@@ -22,9 +22,9 @@ var global = (function() {
 }.call(null));
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var ethermint_evm_v1_evm_pb = require('../../../ethermint/evm/v1/evm_pb.js');
-goog.object.extend(proto, ethermint_evm_v1_evm_pb);
+
 goog.exportSymbol('proto.ethermint.evm.v1.GenesisAccount', null, global);
 goog.exportSymbol('proto.ethermint.evm.v1.GenesisState', null, global);
 /**

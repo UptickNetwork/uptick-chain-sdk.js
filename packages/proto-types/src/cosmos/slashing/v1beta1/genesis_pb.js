@@ -22,11 +22,11 @@ var global = (function() {
 }.call(null));
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var cosmos_slashing_v1beta1_slashing_pb = require('../../../cosmos/slashing/v1beta1/slashing_pb.js');
-goog.object.extend(proto, cosmos_slashing_v1beta1_slashing_pb);
+
 var cosmos_proto_cosmos_pb = require('../../../cosmos_proto/cosmos_pb.js');
-goog.object.extend(proto, cosmos_proto_cosmos_pb);
+
 goog.exportSymbol('proto.cosmos.slashing.v1beta1.GenesisState', null, global);
 goog.exportSymbol('proto.cosmos.slashing.v1beta1.MissedBlock', null, global);
 goog.exportSymbol('proto.cosmos.slashing.v1beta1.SigningInfo', null, global);

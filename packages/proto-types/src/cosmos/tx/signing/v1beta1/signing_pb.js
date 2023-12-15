@@ -22,9 +22,9 @@ var global = (function() {
 }.call(null));
 
 var cosmos_crypto_multisig_v1beta1_multisig_pb = require('../../../../cosmos/crypto/multisig/v1beta1/multisig_pb.js');
-goog.object.extend(proto, cosmos_crypto_multisig_v1beta1_multisig_pb);
+
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-goog.object.extend(proto, google_protobuf_any_pb);
+
 goog.exportSymbol('proto.cosmos.tx.signing.v1beta1.SignMode', null, global);
 goog.exportSymbol('proto.cosmos.tx.signing.v1beta1.SignatureDescriptor', null, global);
 goog.exportSymbol('proto.cosmos.tx.signing.v1beta1.SignatureDescriptor.Data', null, global);

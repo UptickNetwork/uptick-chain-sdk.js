@@ -23,7 +23,7 @@ var global = (function() {
 }.call(null));
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 goog.exportSymbol('proto.uptick.collection.v1.MsgBurnNFT', null, global);
 goog.exportSymbol('proto.uptick.collection.v1.MsgBurnNFTResponse', null, global);
 goog.exportSymbol('proto.uptick.collection.v1.MsgEditNFT', null, global);

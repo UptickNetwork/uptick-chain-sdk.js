@@ -22,7 +22,7 @@ var global = (function() {
 }.call(null));
 
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 goog.exportSymbol('proto.irismod.nft.BaseNFT', null, global);
 goog.exportSymbol('proto.irismod.nft.Collection', null, global);
 goog.exportSymbol('proto.irismod.nft.Denom', null, global);

@@ -22,11 +22,11 @@ var global = (function() {
 }.call(null));
 
 var irismod_random_random_pb = require('../../irismod/random/random_pb.js');
-goog.object.extend(proto, irismod_random_random_pb);
+
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
-goog.object.extend(proto, google_api_annotations_pb);
+
 goog.exportSymbol('proto.irismod.random.QueryRandomRequest', null, global);
 goog.exportSymbol('proto.irismod.random.QueryRandomRequestQueueRequest', null, global);
 goog.exportSymbol('proto.irismod.random.QueryRandomRequestQueueResponse', null, global);

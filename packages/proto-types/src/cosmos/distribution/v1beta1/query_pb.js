@@ -22,17 +22,17 @@ var global = (function() {
 }.call(null));
 
 var cosmos_base_query_v1beta1_pagination_pb = require('../../../cosmos/base/query/v1beta1/pagination_pb.js');
-goog.object.extend(proto, cosmos_base_query_v1beta1_pagination_pb);
+
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
-goog.object.extend(proto, google_api_annotations_pb);
+
 var cosmos_base_v1beta1_coin_pb = require('../../../cosmos/base/v1beta1/coin_pb.js');
-goog.object.extend(proto, cosmos_base_v1beta1_coin_pb);
+
 var cosmos_distribution_v1beta1_distribution_pb = require('../../../cosmos/distribution/v1beta1/distribution_pb.js');
-goog.object.extend(proto, cosmos_distribution_v1beta1_distribution_pb);
+
 var cosmos_proto_cosmos_pb = require('../../../cosmos_proto/cosmos_pb.js');
-goog.object.extend(proto, cosmos_proto_cosmos_pb);
+
 goog.exportSymbol('proto.cosmos.distribution.v1beta1.QueryCommunityPoolRequest', null, global);
 goog.exportSymbol('proto.cosmos.distribution.v1beta1.QueryCommunityPoolResponse', null, global);
 goog.exportSymbol('proto.cosmos.distribution.v1beta1.QueryDelegationRewardsRequest', null, global);

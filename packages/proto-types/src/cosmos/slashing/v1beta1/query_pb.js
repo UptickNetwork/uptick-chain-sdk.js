@@ -22,15 +22,15 @@ var global = (function() {
 }.call(null));
 
 var cosmos_base_query_v1beta1_pagination_pb = require('../../../cosmos/base/query/v1beta1/pagination_pb.js');
-goog.object.extend(proto, cosmos_base_query_v1beta1_pagination_pb);
+
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
-goog.object.extend(proto, google_api_annotations_pb);
+
 var cosmos_slashing_v1beta1_slashing_pb = require('../../../cosmos/slashing/v1beta1/slashing_pb.js');
-goog.object.extend(proto, cosmos_slashing_v1beta1_slashing_pb);
+
 var cosmos_proto_cosmos_pb = require('../../../cosmos_proto/cosmos_pb.js');
-goog.object.extend(proto, cosmos_proto_cosmos_pb);
+
 goog.exportSymbol('proto.cosmos.slashing.v1beta1.QueryParamsRequest', null, global);
 goog.exportSymbol('proto.cosmos.slashing.v1beta1.QueryParamsResponse', null, global);
 goog.exportSymbol('proto.cosmos.slashing.v1beta1.QuerySigningInfoRequest', null, global);

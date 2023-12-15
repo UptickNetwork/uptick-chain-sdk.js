@@ -22,11 +22,11 @@ var global = (function() {
 }.call(null));
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
-goog.object.extend(proto, google_api_annotations_pb);
+
 var cosmos_params_v1beta1_params_pb = require('../../../cosmos/params/v1beta1/params_pb.js');
-goog.object.extend(proto, cosmos_params_v1beta1_params_pb);
+
 goog.exportSymbol('proto.cosmos.params.v1beta1.QueryParamsRequest', null, global);
 goog.exportSymbol('proto.cosmos.params.v1beta1.QueryParamsResponse', null, global);
 goog.exportSymbol('proto.cosmos.params.v1beta1.QuerySubspacesRequest', null, global);

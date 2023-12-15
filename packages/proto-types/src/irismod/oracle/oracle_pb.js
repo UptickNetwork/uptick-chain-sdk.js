@@ -22,9 +22,9 @@ var global = (function() {
 }.call(null));
 
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-goog.object.extend(proto, google_protobuf_timestamp_pb);
+
 goog.exportSymbol('proto.irismod.oracle.Feed', null, global);
 goog.exportSymbol('proto.irismod.oracle.FeedValue', null, global);
 /**

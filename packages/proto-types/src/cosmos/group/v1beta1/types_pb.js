@@ -22,15 +22,15 @@ var global = (function() {
 }.call(null));
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
-goog.object.extend(proto, google_protobuf_duration_pb);
+
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-goog.object.extend(proto, google_protobuf_timestamp_pb);
+
 var cosmos_proto_cosmos_pb = require('../../../cosmos_proto/cosmos_pb.js');
-goog.object.extend(proto, cosmos_proto_cosmos_pb);
+
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-goog.object.extend(proto, google_protobuf_any_pb);
+
 goog.exportSymbol('proto.cosmos.group.v1beta1.GroupInfo', null, global);
 goog.exportSymbol('proto.cosmos.group.v1beta1.GroupMember', null, global);
 goog.exportSymbol('proto.cosmos.group.v1beta1.GroupPolicyInfo', null, global);

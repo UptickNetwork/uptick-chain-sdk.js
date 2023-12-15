@@ -22,11 +22,11 @@ var global = (function() {
 }.call(null));
 
 var irismod_coinswap_coinswap_pb = require('../../irismod/coinswap/coinswap_pb.js');
-goog.object.extend(proto, irismod_coinswap_coinswap_pb);
+
 var cosmos_base_v1beta1_coin_pb = require('../../cosmos/base/v1beta1/coin_pb.js');
-goog.object.extend(proto, cosmos_base_v1beta1_coin_pb);
+
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 goog.exportSymbol('proto.irismod.coinswap.MsgAddLiquidity', null, global);
 goog.exportSymbol('proto.irismod.coinswap.MsgAddLiquidityResponse', null, global);
 goog.exportSymbol('proto.irismod.coinswap.MsgRemoveLiquidity', null, global);

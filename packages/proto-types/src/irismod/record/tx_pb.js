@@ -22,9 +22,9 @@ var global = (function() {
 }.call(null));
 
 var irismod_record_record_pb = require('../../irismod/record/record_pb.js');
-goog.object.extend(proto, irismod_record_record_pb);
+
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 goog.exportSymbol('proto.irismod.record.MsgCreateRecord', null, global);
 goog.exportSymbol('proto.irismod.record.MsgCreateRecordResponse', null, global);
 /**
