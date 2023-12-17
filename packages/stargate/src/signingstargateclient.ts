@@ -325,6 +325,29 @@ export class SigningStargateClient extends StargateClient {
 
     return this.signAndBroadcast(delegatorAddress, [delegateMsg], fee, memo);
   }
+  public async reDelegateTokens(
+    delegatorAddress: string,
+    validatorSrcAddress: string,
+	validatorDstAddress: string,
+    amount: Coin,
+    fee: StdFee | "auto" | number,
+    memo = "",
+  ): Promise<DeliverTxResponse> {
+    const reDelegateMsg: EncodeObject = {
+      typeUrl: "/cosmos.staking.v1beta1.MsgBeginRedelegate",
+      value: MsgBeginRedelegate.fromPartial({
+        delegatorAddress: delegatorAddress,
+        validatorSrcAddress: validatorSrcAddress,
+		validatorDstAddress: validatorDstAddress,
+        amount: amount,
+      }),
+    };
+  
+		
+		
+  
+    return this.signAndBroadcast(delegatorAddress, [reDelegateMsg], fee, memo);
+  }
 
   public async undelegateTokens(
     delegatorAddress: string,
@@ -358,6 +381,27 @@ export class SigningStargateClient extends StargateClient {
       }),
     };
     return this.signAndBroadcast(delegatorAddress, [withdrawMsg], fee, memo);
+  }
+  public async withdrawRewardsAll(
+    delegatorAddress: string,
+    validatorAddressList: string[],
+    fee: StdFee | "auto" | number,
+    memo = "",
+  ): Promise<DeliverTxResponse> {
+	  
+	  let withdrawMsgs:MsgWithdrawDelegatorRewardEncodeObject[]=[];
+	  validatorAddressList.forEach(validatorAddress=>{
+		  const withdrawMsg: MsgWithdrawDelegatorRewardEncodeObject = {
+		    typeUrl: "/cosmos.distribution.v1beta1.MsgWithdrawDelegatorReward",
+		    value: MsgWithdrawDelegatorReward.fromPartial({
+		      delegatorAddress: delegatorAddress,
+		      validatorAddress: validatorAddress,
+		    }),
+		  };
+		  withdrawMsgs.push(withdrawMsg);
+	  })
+
+    return this.signAndBroadcast(delegatorAddress, withdrawMsgs, fee, memo);
   }
 
   public async sendIbcTokens(
@@ -405,7 +449,6 @@ export class SigningStargateClient extends StargateClient {
     } else {
       usedFee = fee;
     }
-    debugger
     const txRaw = await this.sign(signerAddress, messages, usedFee, memo);
 
     const txBytes = TxRaw.encode(txRaw).finish();
