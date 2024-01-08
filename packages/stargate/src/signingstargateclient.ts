@@ -33,6 +33,7 @@ import { assert, assertDefined } from "@cosmjs/utils";
 import { MsgExec, MsgGrant, MsgRevoke } from "cosmjs-types/cosmos/authz/v1beta1/tx";
 import { MsgMultiSend, MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
 import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
+import { VoteOption, WeightedVoteOption } from "cosmjs-types/cosmos/gov/v1beta1/gov";
 import {
   MsgFundCommunityPool,
   MsgSetWithdrawAddress,
@@ -108,6 +109,7 @@ import {
   MsgTransferEncodeObject,
   MsgUndelegateEncodeObject,
   MsgWithdrawDelegatorRewardEncodeObject,
+  MsgVoteEncodeObject,
 } from "./encodeobjects";
 import { calculateFee, GasPrice } from "./fee";
 import { DeliverTxResponse, StargateClient } from "./stargateclient";
@@ -349,6 +351,7 @@ export class SigningStargateClient extends StargateClient {
     return this.signAndBroadcast(delegatorAddress, [reDelegateMsg], fee, memo);
   }
 
+
   public async undelegateTokens(
     delegatorAddress: string,
     validatorAddress: string,
@@ -403,6 +406,35 @@ export class SigningStargateClient extends StargateClient {
 
     return this.signAndBroadcast(delegatorAddress, withdrawMsgs, fee, memo);
   }
+
+
+  public async vote(
+    voterAddress: string,
+    proposalId: Long,
+	option:VoteOption,
+    fee: StdFee | "auto" | number,
+    memo = "",
+  ): Promise<DeliverTxResponse> {
+	  
+	  // VOTE_OPTION_UNSPECIFIED = 0,
+	  // VOTE_OPTION_YES = 1,
+	  // VOTE_OPTION_ABSTAIN = 2,
+	  // VOTE_OPTION_NO = 3,
+	  // VOTE_OPTION_NO_WITH_VETO = 4,
+	  // UNRECOGNIZED = -1
+    const voteMsg: MsgVoteEncodeObject = {
+      typeUrl: "/cosmos.gov.v1beta1.MsgVote",
+      value: MsgVote.fromPartial({
+        proposalId: proposalId,
+         voter: voterAddress,
+		 option:option
+      }),
+    };
+
+	
+    return this.signAndBroadcast(voterAddress, [voteMsg], fee, memo);
+  }
+  
 
   public async sendIbcTokens(
     senderAddress: string,
