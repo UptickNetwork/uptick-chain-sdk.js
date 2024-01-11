@@ -16,13 +16,13 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 var tendermint_types_types_pb = require('../../tendermint/types/types_pb.js');
-
+goog.object.extend(proto, tendermint_types_types_pb);
 var tendermint_types_validator_pb = require('../../tendermint/types/validator_pb.js');
-
+goog.object.extend(proto, tendermint_types_validator_pb);
 goog.exportSymbol('proto.tendermint.types.DuplicateVoteEvidence', null, global);
 goog.exportSymbol('proto.tendermint.types.Evidence', null, global);
 goog.exportSymbol('proto.tendermint.types.Evidence.SumCase', null, global);

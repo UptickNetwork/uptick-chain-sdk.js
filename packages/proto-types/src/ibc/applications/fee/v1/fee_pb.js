@@ -16,11 +16,11 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var cosmos_base_v1beta1_coin_pb = require('../../../../cosmos/base/v1beta1/coin_pb.js');
-
+goog.object.extend(proto, cosmos_base_v1beta1_coin_pb);
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var ibc_core_channel_v1_channel_pb = require('../../../../ibc/core/channel/v1/channel_pb.js');
-
+goog.object.extend(proto, ibc_core_channel_v1_channel_pb);
 goog.exportSymbol('proto.ibc.applications.fee.v1.Fee', null, global);
 goog.exportSymbol('proto.ibc.applications.fee.v1.IdentifiedPacketFees', null, global);
 goog.exportSymbol('proto.ibc.applications.fee.v1.PacketFee', null, global);

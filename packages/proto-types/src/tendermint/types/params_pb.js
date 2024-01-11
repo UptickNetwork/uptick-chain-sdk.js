@@ -16,9 +16,9 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
-
+goog.object.extend(proto, google_protobuf_duration_pb);
 goog.exportSymbol('proto.tendermint.types.BlockParams', null, global);
 goog.exportSymbol('proto.tendermint.types.ConsensusParams', null, global);
 goog.exportSymbol('proto.tendermint.types.EvidenceParams', null, global);

@@ -44,10 +44,10 @@
     "@cosmjs/crypto": "0.27.1",
     "@cosmjs/encoding": "0.27.1",
 
+    "@uptsmart/proto-types": "0.27.16",
+    "@uptsmart/proto-signing": "0.27.11",
+    "@uptsmart/stargate": "0.27.19",
 
-    "@uptsmart/proto-signing": "0.27.10",
-    "@uptsmart/proto-types": "0.27.15",
-    "@uptsmart/stargate": "0.27.18",
     "chai": "4.3.4",
     "chai-as-promised": "^7.1.1",
     "eslint": "^7.5",

@@ -16,21 +16,21 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var tendermint_types_validator_pb = require('../../../../tendermint/types/validator_pb.js');
-
+goog.object.extend(proto, tendermint_types_validator_pb);
 var tendermint_types_types_pb = require('../../../../tendermint/types/types_pb.js');
-
+goog.object.extend(proto, tendermint_types_types_pb);
 var confio_proofs_pb = require('../../../../confio/proofs_pb.js');
-
+goog.object.extend(proto, confio_proofs_pb);
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
-
+goog.object.extend(proto, google_protobuf_duration_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 var ibc_core_client_v1_client_pb = require('../../../../ibc/core/client/v1/client_pb.js');
-
+goog.object.extend(proto, ibc_core_client_v1_client_pb);
 var ibc_core_commitment_v1_commitment_pb = require('../../../../ibc/core/commitment/v1/commitment_pb.js');
-
+goog.object.extend(proto, ibc_core_commitment_v1_commitment_pb);
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 goog.exportSymbol('proto.ibc.lightclients.tendermint.v1.ClientState', null, global);
 goog.exportSymbol('proto.ibc.lightclients.tendermint.v1.ConsensusState', null, global);
 goog.exportSymbol('proto.ibc.lightclients.tendermint.v1.Fraction', null, global);

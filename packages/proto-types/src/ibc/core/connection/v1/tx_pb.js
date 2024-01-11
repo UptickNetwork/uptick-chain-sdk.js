@@ -16,13 +16,13 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-
+goog.object.extend(proto, google_protobuf_any_pb);
 var ibc_core_client_v1_client_pb = require('../../../../ibc/core/client/v1/client_pb.js');
-
+goog.object.extend(proto, ibc_core_client_v1_client_pb);
 var ibc_core_connection_v1_connection_pb = require('../../../../ibc/core/connection/v1/connection_pb.js');
-
+goog.object.extend(proto, ibc_core_connection_v1_connection_pb);
 goog.exportSymbol('proto.ibc.core.connection.v1.MsgConnectionOpenAck', null, global);
 goog.exportSymbol('proto.ibc.core.connection.v1.MsgConnectionOpenAckResponse', null, global);
 goog.exportSymbol('proto.ibc.core.connection.v1.MsgConnectionOpenConfirm', null, global);

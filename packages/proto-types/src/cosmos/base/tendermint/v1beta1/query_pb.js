@@ -16,23 +16,23 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-
+goog.object.extend(proto, google_protobuf_any_pb);
 var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
-
+goog.object.extend(proto, google_api_annotations_pb);
 var tendermint_p2p_types_pb = require('../../../../tendermint/p2p/types_pb.js');
-
+goog.object.extend(proto, tendermint_p2p_types_pb);
 var tendermint_types_types_pb = require('../../../../tendermint/types/types_pb.js');
-
+goog.object.extend(proto, tendermint_types_types_pb);
 var cosmos_base_query_v1beta1_pagination_pb = require('../../../../cosmos/base/query/v1beta1/pagination_pb.js');
-
+goog.object.extend(proto, cosmos_base_query_v1beta1_pagination_pb);
 var cosmos_base_tendermint_v1beta1_types_pb = require('../../../../cosmos/base/tendermint/v1beta1/types_pb.js');
-
+goog.object.extend(proto, cosmos_base_tendermint_v1beta1_types_pb);
 var cosmos_proto_cosmos_pb = require('../../../../cosmos_proto/cosmos_pb.js');
-
+goog.object.extend(proto, cosmos_proto_cosmos_pb);
 var tendermint_types_block_pb = require('../../../../tendermint/types/block_pb.js');
-
+goog.object.extend(proto, tendermint_types_block_pb);
 goog.exportSymbol('proto.cosmos.base.tendermint.v1beta1.ABCIQueryRequest', null, global);
 goog.exportSymbol('proto.cosmos.base.tendermint.v1beta1.ABCIQueryResponse', null, global);
 goog.exportSymbol('proto.cosmos.base.tendermint.v1beta1.GetBlockByHeightRequest', null, global);

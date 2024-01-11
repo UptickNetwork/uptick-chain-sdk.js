@@ -16,11 +16,11 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var tendermint_abci_types_pb = require('../../../../tendermint/abci/types_pb.js');
-
+goog.object.extend(proto, tendermint_abci_types_pb);
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-
+goog.object.extend(proto, google_protobuf_any_pb);
 goog.exportSymbol('proto.cosmos.base.abci.v1beta1.ABCIMessageLog', null, global);
 goog.exportSymbol('proto.cosmos.base.abci.v1beta1.Attribute', null, global);
 goog.exportSymbol('proto.cosmos.base.abci.v1beta1.GasInfo', null, global);

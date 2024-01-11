@@ -16,7 +16,7 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 goog.exportSymbol('proto.tendermint.p2p.DefaultNodeInfo', null, global);
 goog.exportSymbol('proto.tendermint.p2p.DefaultNodeInfoOther', null, global);
 goog.exportSymbol('proto.tendermint.p2p.NetAddress', null, global);

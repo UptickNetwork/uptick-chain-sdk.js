@@ -362,9 +362,7 @@ export class DirectSecp256k1HdWallet implements OfflineDirectSigner {
           const address0x = `0x${toHex(keccak256(pubkey.slice(1)).slice(-20))}`;
          
           let wordsbyte = keccak256(pubkey.slice(1)).slice(-20);
-
           address = Bech32.encode(prefix,wordsbyte);
-          console.log("uptickAddress=="+address)
           let uptickPubkey=Secp256k1.compressPubkey(pubkey);
           return {
             algo: "secp256k1" as const,

@@ -16,9 +16,9 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var uptick_erc20_v1_erc20_pb = require('../../../uptick/erc20/v1/erc20_pb.js');
-
+goog.object.extend(proto, uptick_erc20_v1_erc20_pb);
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 goog.exportSymbol('proto.uptick.erc20.v1.GenesisState', null, global);
 goog.exportSymbol('proto.uptick.erc20.v1.Params', null, global);
 /**

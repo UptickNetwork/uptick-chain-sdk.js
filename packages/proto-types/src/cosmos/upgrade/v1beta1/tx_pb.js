@@ -16,13 +16,13 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var cosmos_proto_cosmos_pb = require('../../../cosmos_proto/cosmos_pb.js');
-
+goog.object.extend(proto, cosmos_proto_cosmos_pb);
 var cosmos_upgrade_v1beta1_upgrade_pb = require('../../../cosmos/upgrade/v1beta1/upgrade_pb.js');
-
+goog.object.extend(proto, cosmos_upgrade_v1beta1_upgrade_pb);
 var cosmos_msg_v1_msg_pb = require('../../../cosmos/msg/v1/msg_pb.js');
-
+goog.object.extend(proto, cosmos_msg_v1_msg_pb);
 goog.exportSymbol('proto.cosmos.upgrade.v1beta1.MsgCancelUpgrade', null, global);
 goog.exportSymbol('proto.cosmos.upgrade.v1beta1.MsgCancelUpgradeResponse', null, global);
 goog.exportSymbol('proto.cosmos.upgrade.v1beta1.MsgSoftwareUpgrade', null, global);

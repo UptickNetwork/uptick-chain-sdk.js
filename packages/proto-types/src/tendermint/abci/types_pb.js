@@ -16,17 +16,17 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var tendermint_crypto_proof_pb = require('../../tendermint/crypto/proof_pb.js');
-
+goog.object.extend(proto, tendermint_crypto_proof_pb);
 var tendermint_types_types_pb = require('../../tendermint/types/types_pb.js');
-
+goog.object.extend(proto, tendermint_types_types_pb);
 var tendermint_crypto_keys_pb = require('../../tendermint/crypto/keys_pb.js');
-
+goog.object.extend(proto, tendermint_crypto_keys_pb);
 var tendermint_types_params_pb = require('../../tendermint/types/params_pb.js');
-
+goog.object.extend(proto, tendermint_types_params_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 goog.exportSymbol('proto.tendermint.abci.BlockParams', null, global);
 goog.exportSymbol('proto.tendermint.abci.CheckTxType', null, global);
 goog.exportSymbol('proto.tendermint.abci.ConsensusParams', null, global);

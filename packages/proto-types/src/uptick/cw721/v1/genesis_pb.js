@@ -16,9 +16,9 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var uptick_cw721_v1_cw721_pb = require('../../../uptick/cw721/v1/cw721_pb.js');
-
+goog.object.extend(proto, uptick_cw721_v1_cw721_pb);
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 goog.exportSymbol('proto.uptick.cw721.v1.GenesisState', null, global);
 goog.exportSymbol('proto.uptick.cw721.v1.Params', null, global);
 /**

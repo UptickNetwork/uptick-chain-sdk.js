@@ -16,17 +16,17 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var ibc_core_client_v1_client_pb = require('../../../../ibc/core/client/v1/client_pb.js');
-
+goog.object.extend(proto, ibc_core_client_v1_client_pb);
 var cosmos_base_query_v1beta1_pagination_pb = require('../../../../cosmos/base/query/v1beta1/pagination_pb.js');
-
+goog.object.extend(proto, cosmos_base_query_v1beta1_pagination_pb);
 var ibc_core_channel_v1_channel_pb = require('../../../../ibc/core/channel/v1/channel_pb.js');
-
+goog.object.extend(proto, ibc_core_channel_v1_channel_pb);
 var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
-
+goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-
+goog.object.extend(proto, google_protobuf_any_pb);
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 goog.exportSymbol('proto.ibc.core.channel.v1.QueryChannelClientStateRequest', null, global);
 goog.exportSymbol('proto.ibc.core.channel.v1.QueryChannelClientStateResponse', null, global);
 goog.exportSymbol('proto.ibc.core.channel.v1.QueryChannelConsensusStateRequest', null, global);

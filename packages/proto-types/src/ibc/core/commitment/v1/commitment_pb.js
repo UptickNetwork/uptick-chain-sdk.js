@@ -16,9 +16,9 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var confio_proofs_pb = require('../../../../confio/proofs_pb.js');
-
+goog.object.extend(proto, confio_proofs_pb);
 goog.exportSymbol('proto.ibc.core.commitment.v1.MerklePath', null, global);
 goog.exportSymbol('proto.ibc.core.commitment.v1.MerklePrefix', null, global);
 goog.exportSymbol('proto.ibc.core.commitment.v1.MerkleProof', null, global);

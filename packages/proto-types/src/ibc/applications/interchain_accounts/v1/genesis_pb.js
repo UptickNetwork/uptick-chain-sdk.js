@@ -16,11 +16,11 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var ibc_applications_interchain_accounts_controller_v1_controller_pb = require('../../../../ibc/applications/interchain_accounts/controller/v1/controller_pb.js');
-
+goog.object.extend(proto, ibc_applications_interchain_accounts_controller_v1_controller_pb);
 var ibc_applications_interchain_accounts_host_v1_host_pb = require('../../../../ibc/applications/interchain_accounts/host/v1/host_pb.js');
-
+goog.object.extend(proto, ibc_applications_interchain_accounts_host_v1_host_pb);
 goog.exportSymbol('proto.ibc.applications.interchain_accounts.v1.ActiveChannel', null, global);
 goog.exportSymbol('proto.ibc.applications.interchain_accounts.v1.ControllerGenesisState', null, global);
 goog.exportSymbol('proto.ibc.applications.interchain_accounts.v1.GenesisState', null, global);

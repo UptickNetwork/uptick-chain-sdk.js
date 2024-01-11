@@ -16,9 +16,9 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var ibc_core_channel_v1_channel_pb = require('../../../../ibc/core/channel/v1/channel_pb.js');
-
+goog.object.extend(proto, ibc_core_channel_v1_channel_pb);
 goog.exportSymbol('proto.ibc.core.channel.v1.GenesisState', null, global);
 goog.exportSymbol('proto.ibc.core.channel.v1.PacketSequence', null, global);
 /**

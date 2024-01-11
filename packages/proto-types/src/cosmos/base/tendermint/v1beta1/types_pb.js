@@ -16,15 +16,15 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var tendermint_types_types_pb = require('../../../../tendermint/types/types_pb.js');
-
+goog.object.extend(proto, tendermint_types_types_pb);
 var tendermint_types_evidence_pb = require('../../../../tendermint/types/evidence_pb.js');
-
+goog.object.extend(proto, tendermint_types_evidence_pb);
 var tendermint_version_types_pb = require('../../../../tendermint/version/types_pb.js');
-
+goog.object.extend(proto, tendermint_version_types_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.cosmos.base.tendermint.v1beta1.Block', null, global);
 goog.exportSymbol('proto.cosmos.base.tendermint.v1beta1.Header', null, global);
 /**

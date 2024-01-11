@@ -16,9 +16,9 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
-
+goog.object.extend(proto, google_api_annotations_pb);
 var cosmos_upgrade_v1beta1_upgrade_pb = require('../../../cosmos/upgrade/v1beta1/upgrade_pb.js');
-
+goog.object.extend(proto, cosmos_upgrade_v1beta1_upgrade_pb);
 goog.exportSymbol('proto.cosmos.upgrade.v1beta1.QueryAppliedPlanRequest', null, global);
 goog.exportSymbol('proto.cosmos.upgrade.v1beta1.QueryAppliedPlanResponse', null, global);
 goog.exportSymbol('proto.cosmos.upgrade.v1beta1.QueryAuthorityRequest', null, global);

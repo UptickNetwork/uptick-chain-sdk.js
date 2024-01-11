@@ -16,9 +16,9 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var tendermint_crypto_keys_pb = require('../../tendermint/crypto/keys_pb.js');
-
+goog.object.extend(proto, tendermint_crypto_keys_pb);
 goog.exportSymbol('proto.tendermint.types.SimpleValidator', null, global);
 goog.exportSymbol('proto.tendermint.types.Validator', null, global);
 goog.exportSymbol('proto.tendermint.types.ValidatorSet', null, global);

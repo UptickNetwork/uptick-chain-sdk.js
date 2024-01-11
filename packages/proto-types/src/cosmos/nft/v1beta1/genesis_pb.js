@@ -16,7 +16,7 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var cosmos_nft_v1beta1_nft_pb = require('../../../cosmos/nft/v1beta1/nft_pb.js');
-
+goog.object.extend(proto, cosmos_nft_v1beta1_nft_pb);
 goog.exportSymbol('proto.cosmos.nft.v1beta1.Entry', null, global);
 goog.exportSymbol('proto.cosmos.nft.v1beta1.GenesisState', null, global);
 /**

@@ -16,7 +16,7 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var cosmos_msg_v1_msg_pb = require('../../../cosmos/msg/v1/msg_pb.js');
-
+goog.object.extend(proto, cosmos_msg_v1_msg_pb);
 goog.exportSymbol('proto.cosmos.nft.v1beta1.MsgSend', null, global);
 goog.exportSymbol('proto.cosmos.nft.v1beta1.MsgSendResponse', null, global);
 /**

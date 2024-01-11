@@ -16,9 +16,9 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var google_api_annotations_pb = require('../../../../../google/api/annotations_pb.js');
-
+goog.object.extend(proto, google_api_annotations_pb);
 var ibc_applications_interchain_accounts_host_v1_host_pb = require('../../../../../ibc/applications/interchain_accounts/host/v1/host_pb.js');
-
+goog.object.extend(proto, ibc_applications_interchain_accounts_host_v1_host_pb);
 goog.exportSymbol('proto.ibc.applications.interchain_accounts.host.v1.QueryParamsRequest', null, global);
 goog.exportSymbol('proto.ibc.applications.interchain_accounts.host.v1.QueryParamsResponse', null, global);
 /**

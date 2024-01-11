@@ -16,13 +16,13 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var cosmos_proto_cosmos_pb = require('../../../cosmos_proto/cosmos_pb.js');
-
+goog.object.extend(proto, cosmos_proto_cosmos_pb);
 var cosmos_base_v1beta1_coin_pb = require('../../../cosmos/base/v1beta1/coin_pb.js');
-
+goog.object.extend(proto, cosmos_base_v1beta1_coin_pb);
 var cosmos_msg_v1_msg_pb = require('../../../cosmos/msg/v1/msg_pb.js');
-
+goog.object.extend(proto, cosmos_msg_v1_msg_pb);
 goog.exportSymbol('proto.cosmos.bank.v1beta1.DenomUnit', null, global);
 goog.exportSymbol('proto.cosmos.bank.v1beta1.Input', null, global);
 goog.exportSymbol('proto.cosmos.bank.v1beta1.Metadata', null, global);

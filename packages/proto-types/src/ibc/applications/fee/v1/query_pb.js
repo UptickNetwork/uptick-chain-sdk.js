@@ -16,19 +16,19 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
-
+goog.object.extend(proto, google_api_annotations_pb);
 var cosmos_base_v1beta1_coin_pb = require('../../../../cosmos/base/v1beta1/coin_pb.js');
-
+goog.object.extend(proto, cosmos_base_v1beta1_coin_pb);
 var cosmos_base_query_v1beta1_pagination_pb = require('../../../../cosmos/base/query/v1beta1/pagination_pb.js');
-
+goog.object.extend(proto, cosmos_base_query_v1beta1_pagination_pb);
 var ibc_applications_fee_v1_fee_pb = require('../../../../ibc/applications/fee/v1/fee_pb.js');
-
+goog.object.extend(proto, ibc_applications_fee_v1_fee_pb);
 var ibc_applications_fee_v1_genesis_pb = require('../../../../ibc/applications/fee/v1/genesis_pb.js');
-
+goog.object.extend(proto, ibc_applications_fee_v1_genesis_pb);
 var ibc_core_channel_v1_channel_pb = require('../../../../ibc/core/channel/v1/channel_pb.js');
-
+goog.object.extend(proto, ibc_core_channel_v1_channel_pb);
 goog.exportSymbol('proto.ibc.applications.fee.v1.QueryCounterpartyPayeeRequest', null, global);
 goog.exportSymbol('proto.ibc.applications.fee.v1.QueryCounterpartyPayeeResponse', null, global);
 goog.exportSymbol('proto.ibc.applications.fee.v1.QueryFeeEnabledChannelRequest', null, global);

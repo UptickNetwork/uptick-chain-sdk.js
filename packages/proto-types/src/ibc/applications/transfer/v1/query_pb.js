@@ -16,13 +16,13 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var cosmos_base_query_v1beta1_pagination_pb = require('../../../../cosmos/base/query/v1beta1/pagination_pb.js');
-
+goog.object.extend(proto, cosmos_base_query_v1beta1_pagination_pb);
 var ibc_applications_transfer_v1_transfer_pb = require('../../../../ibc/applications/transfer/v1/transfer_pb.js');
-
+goog.object.extend(proto, ibc_applications_transfer_v1_transfer_pb);
 var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
-
+goog.object.extend(proto, google_api_annotations_pb);
 goog.exportSymbol('proto.ibc.applications.transfer.v1.QueryDenomHashRequest', null, global);
 goog.exportSymbol('proto.ibc.applications.transfer.v1.QueryDenomHashResponse', null, global);
 goog.exportSymbol('proto.ibc.applications.transfer.v1.QueryDenomTraceRequest', null, global);

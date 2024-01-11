@@ -16,13 +16,13 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-
+goog.object.extend(proto, google_protobuf_any_pb);
 var cosmos_upgrade_v1beta1_upgrade_pb = require('../../../../cosmos/upgrade/v1beta1/upgrade_pb.js');
-
+goog.object.extend(proto, cosmos_upgrade_v1beta1_upgrade_pb);
 var cosmos_proto_cosmos_pb = require('../../../../cosmos_proto/cosmos_pb.js');
-
+goog.object.extend(proto, cosmos_proto_cosmos_pb);
 goog.exportSymbol('proto.ibc.core.client.v1.ClientConsensusStates', null, global);
 goog.exportSymbol('proto.ibc.core.client.v1.ClientUpdateProposal', null, global);
 goog.exportSymbol('proto.ibc.core.client.v1.ConsensusStateWithHeight', null, global);

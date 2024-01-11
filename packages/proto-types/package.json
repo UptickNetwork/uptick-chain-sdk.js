@@ -1,6 +1,6 @@
 {
   "name": "@uptsmart/proto-types",
-  "version": "0.27.13",
+  "version": "0.27.16",
   "description": "Utility functions for working with WebSockets",
   "contributors": [
     "Uptsmart <1157447041@qq.com>"

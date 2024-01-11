@@ -16,13 +16,13 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var ibc_core_connection_v1_connection_pb = require('../../../../ibc/core/connection/v1/connection_pb.js');
-
+goog.object.extend(proto, ibc_core_connection_v1_connection_pb);
 var ibc_core_channel_v1_channel_pb = require('../../../../ibc/core/channel/v1/channel_pb.js');
-
+goog.object.extend(proto, ibc_core_channel_v1_channel_pb);
 var gogoproto_gogo_pb = require('../../../../gogoproto/gogo_pb.js');
-
+goog.object.extend(proto, gogoproto_gogo_pb);
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-
+goog.object.extend(proto, google_protobuf_any_pb);
 goog.exportSymbol('proto.ibc.lightclients.solomachine.v2.ChannelStateData', null, global);
 goog.exportSymbol('proto.ibc.lightclients.solomachine.v2.ClientState', null, global);
 goog.exportSymbol('proto.ibc.lightclients.solomachine.v2.ClientStateData', null, global);

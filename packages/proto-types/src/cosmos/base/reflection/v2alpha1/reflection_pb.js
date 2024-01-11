@@ -16,7 +16,7 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
-
+goog.object.extend(proto, google_api_annotations_pb);
 goog.exportSymbol('proto.cosmos.base.reflection.v2alpha1.AppDescriptor', null, global);
 goog.exportSymbol('proto.cosmos.base.reflection.v2alpha1.AuthnDescriptor', null, global);
 goog.exportSymbol('proto.cosmos.base.reflection.v2alpha1.ChainDescriptor', null, global);

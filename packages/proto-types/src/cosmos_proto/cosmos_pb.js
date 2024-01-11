@@ -16,7 +16,7 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
-
+goog.object.extend(proto, google_protobuf_descriptor_pb);
 goog.exportSymbol('proto.cosmos_proto.acceptsInterface', null, global);
 goog.exportSymbol('proto.cosmos_proto.implementsInterface', null, global);
 goog.exportSymbol('proto.cosmos_proto.interfaceType', null, global);
