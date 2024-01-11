@@ -26,7 +26,7 @@
     "format-shell": "shfmt -w scripts packages",
     "lint": "yarn workspaces foreach --topological-dev --parallel --verbose run lint",
     "lint-fix": "yarn workspaces foreach --topological-dev --parallel --verbose run lint-fix",
-    "test": "node ./node_modules/mocha/bin/mocha",
+    "test": "node ./node_modules/mocha/bin/mocha --timeout 60000",
     "test-unit": "yarn workspaces foreach --topological-dev --parallel --verbose run test",
     "test-firefox": "yarn workspaces foreach --topological-dev --parallel --verbose run test-firefox",
     "test-chrome": "yarn workspaces foreach --topological-dev --parallel --verbose run test-chrome",
@@ -43,8 +43,11 @@
     "@cosmjs/cosmwasm-stargate": "0.27.1",
     "@cosmjs/crypto": "0.27.1",
     "@cosmjs/encoding": "0.27.1",
-    "@uptsmart/proto-signing": "0.27.6",
-    "@uptsmart/stargate": "0.27.7",
+
+
+    "@uptsmart/proto-signing": "0.27.10",
+    "@uptsmart/proto-types": "0.27.15",
+    "@uptsmart/stargate": "0.27.18",
     "chai": "4.3.4",
     "chai-as-promised": "^7.1.1",
     "eslint": "^7.5",

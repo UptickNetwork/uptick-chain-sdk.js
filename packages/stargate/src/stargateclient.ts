@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { toHex } from "@cosmjs/encoding";
 import { Uint53 } from "@cosmjs/math";
-import { Tendermint34Client, toRfc3339WithNanoseconds } from "@cosmjs/tendermint-rpc";
+import { Tendermint37Client, toRfc3339WithNanoseconds } from "@cosmjs/tendermint-rpc";
 import { sleep } from "@cosmjs/utils";
 import { MsgData } from "cosmjs-types/cosmos/base/abci/v1beta1/abci";
 import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
@@ -77,8 +77,8 @@ export interface IndexedTx {
    * Use `decodeTxRaw` from @uptsmart/proto-signing to decode this.
    */
   readonly tx: Uint8Array;
-  readonly gasUsed: number;
-  readonly gasWanted: number;
+  readonly gasUsed: bigint;
+  readonly gasWanted: bigint;
 }
 
 export interface SequenceResponse {
@@ -97,8 +97,8 @@ export interface DeliverTxResponse {
   readonly transactionHash: string;
   readonly rawLog?: string;
   readonly data?: readonly MsgData[];
-  readonly gasUsed: number;
-  readonly gasWanted: number;
+  readonly gasUsed: bigint;
+  readonly gasWanted: bigint;
 }
 
 export function isDeliverTxFailure(result: DeliverTxResponse): boolean {
@@ -133,22 +133,22 @@ export function assertIsDeliverTxFailure(result: DeliverTxResponse): void {
 
 /** Use for testing only */
 export interface PrivateStargateClient {
-  readonly tmClient: Tendermint34Client | undefined;
+  readonly tmClient: Tendermint37Client | undefined;
 }
 
 export class StargateClient {
-  private readonly tmClient: Tendermint34Client | undefined;
+  private readonly tmClient: Tendermint37Client | undefined;
   private readonly queryClient:
     | (QueryClient & AuthExtension & BankExtension & StakingExtension & TxExtension)
     | undefined;
   private chainId: string | undefined;
 
   public static async connect(endpoint: string): Promise<StargateClient> {
-    const tmClient = await Tendermint34Client.connect(endpoint);
+    const tmClient = await Tendermint37Client.connect(endpoint);
     return new StargateClient(tmClient);
   }
 
-  protected constructor(tmClient: Tendermint34Client | undefined) {
+  protected constructor(tmClient: Tendermint37Client | undefined) {
     if (tmClient) {
       this.tmClient = tmClient;
       this.queryClient = QueryClient.withExtensions(
@@ -161,11 +161,11 @@ export class StargateClient {
     }
   }
 
-  protected getTmClient(): Tendermint34Client | undefined {
+  protected getTmClient(): Tendermint37Client | undefined {
     return this.tmClient;
   }
 
-  protected forceGetTmClient(): Tendermint34Client {
+  protected forceGetTmClient(): Tendermint37Client {
     if (!this.tmClient) {
       throw new Error(
         "Tendermint client not available. You cannot use online functionality in offline mode.",
@@ -371,7 +371,7 @@ export class StargateClient {
     const broadcasted = await this.forceGetTmClient().broadcastTxSync({ tx });
     if (broadcasted.code) {
       throw new Error(
-        `Broadcasting transaction failed with code ${broadcasted.code} (codespace: ${broadcasted.codeSpace}). Log: ${broadcasted.log}`,
+        `Broadcasting transaction failed with code ${broadcasted.code} (codespace: ${broadcasted.codespace}). Log: ${broadcasted.log}`,
       );
     }
     const transactionId = toHex(broadcasted.hash).toUpperCase();
@@ -388,10 +388,11 @@ export class StargateClient {
       ),
     );
   }
-
+  
   private async txsQuery(query: string): Promise<readonly IndexedTx[]> {
+
     const results = await this.forceGetTmClient().txSearchAll({ query: query });
-    return results.txs.map((tx) => {
+    return results.txs.map((tx): IndexedTx => {
       return {
         height: tx.height,
         hash: toHex(tx.hash).toUpperCase(),
@@ -402,5 +403,7 @@ export class StargateClient {
         gasWanted: tx.result.gasWanted,
       };
     });
+
+
   }
 }

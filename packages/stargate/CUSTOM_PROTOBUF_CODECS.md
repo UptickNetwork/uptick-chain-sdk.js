@@ -172,12 +172,12 @@ using CosmJS helpers:
 
 ```ts
 import { createProtobufRpcClient, QueryClient } from "@uptsmart/stargate";
-import { Tendermint34Client } from "@cosmjs/tendermint-rpc";
+import { Tendermint37Client } from "@cosmjs/tendermint-rpc";
 import { QueryClientImpl } from "./path/to/generated/codec/my/custom/query";
 
 // Inside an async function...
 // The Tendermint client knows how to talk to the Tendermint RPC endpoint
-const tendermintClient = await Tendermint34Client.connect("my.endpoint.com");
+const tendermintClient = await Tendermint37Client.connect("my.endpoint.com");
 
 // The generic Stargate query client knows how to use the Tendermint client to submit unverified ABCI queries
 const queryClient = new QueryClient(tendermintClient);

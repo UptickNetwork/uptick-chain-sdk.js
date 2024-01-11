@@ -30,7 +30,7 @@ message MsgConvertNFT {
   // nft classID to cnvert to ERC721
   string class_id = 1;
   // nftID to cnvert to ERC721
-  repeated string cosmos_token_ids = 2;
+  string cosmos_token_ids = 2;
   // recipient hex address to receive ERC721 token
   string evm_receiver = 3;
   // cosmos bech32 address from the owner of the given Cosmos coins
@@ -38,7 +38,7 @@ message MsgConvertNFT {
   // ERC721 token contract address registered in a token pair
   string evm_contract_address = 5;
   // ERC721 token id registered in a token pair
-  repeated string evm_token_ids = 6;
+  string evm_token_ids = 6;
 }
 
 // MsgConvertNFTResponse returns no fields
@@ -50,15 +50,16 @@ message MsgConvertERC721 {
   // ERC721 token contract address registered in a token pair
   string evm_contract_address = 1;
   // tokenID to convert
-  repeated string evm_token_ids = 2;
+  string evm_token_ids = 2;
   // bech32 address to receive native Cosmos coins
   string cosmos_receiver = 3;
   // sender hex address from the owner of the given ERC721 tokens
   string evm_sender = 4;
   // nft classID to cnvert to ERC721
   string class_id = 5;
+
   // nftID to cnvert to ERC721
-  repeated string cosmos_token_ids = 6;
+  string cosmos_token_ids = 6;
 }
 
 // MsgConvertERC721Response returns no fields
