@@ -16,11 +16,11 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
-goog.object.extend(proto, google_api_annotations_pb);
+
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var ibc_core_client_v1_client_pb = require('../../../ibc/core/client/v1/client_pb.js');
-goog.object.extend(proto, ibc_core_client_v1_client_pb);
+
 goog.exportSymbol('proto.uptick.erc721.v1.MsgConvertERC721', null, global);
 goog.exportSymbol('proto.uptick.erc721.v1.MsgConvertERC721Response', null, global);
 goog.exportSymbol('proto.uptick.erc721.v1.MsgConvertNFT', null, global);
@@ -38,7 +38,7 @@ goog.exportSymbol('proto.uptick.erc721.v1.MsgTransferERC721Response', null, glob
  * @constructor
  */
 proto.uptick.erc721.v1.MsgConvertNFT = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.uptick.erc721.v1.MsgConvertNFT.repeatedFields_, null);
 };
 goog.inherits(proto.uptick.erc721.v1.MsgConvertNFT, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -80,7 +80,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.uptick.erc721.v1.MsgConvertERC721 = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.uptick.erc721.v1.MsgConvertERC721.repeatedFields_, null);
 };
 goog.inherits(proto.uptick.erc721.v1.MsgConvertERC721, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -154,6 +154,13 @@ if (goog.DEBUG && !COMPILED) {
   proto.uptick.erc721.v1.MsgTransferERC721Response.displayName = 'proto.uptick.erc721.v1.MsgTransferERC721Response';
 }
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.uptick.erc721.v1.MsgConvertNFT.repeatedFields_ = [2,6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -186,11 +193,11 @@ proto.uptick.erc721.v1.MsgConvertNFT.prototype.toObject = function(opt_includeIn
 proto.uptick.erc721.v1.MsgConvertNFT.toObject = function(includeInstance, msg) {
   var f, obj = {
     classId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    cosmosTokenIds: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    cosmosTokenIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     evmReceiver: jspb.Message.getFieldWithDefault(msg, 3, ""),
     cosmosSender: jspb.Message.getFieldWithDefault(msg, 4, ""),
     evmContractAddress: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    evmTokenIds: jspb.Message.getFieldWithDefault(msg, 6, "")
+    evmTokenIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -233,8 +240,7 @@ proto.uptick.erc721.v1.MsgConvertNFT.deserializeBinaryFromReader = function(msg,
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      console.log("xxl value ",value);
-      msg.setCosmosTokenIds(value);
+      msg.addCosmosTokenIds(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -250,7 +256,7 @@ proto.uptick.erc721.v1.MsgConvertNFT.deserializeBinaryFromReader = function(msg,
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEvmTokenIds(value);
+      msg.addEvmTokenIds(value);
       break;
     default:
       reader.skipField();
@@ -288,9 +294,9 @@ proto.uptick.erc721.v1.MsgConvertNFT.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getCosmosTokenIds();
+  f = message.getCosmosTokenIdsList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       2,
       f
     );
@@ -316,9 +322,9 @@ proto.uptick.erc721.v1.MsgConvertNFT.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getEvmTokenIds();
+  f = message.getEvmTokenIdsList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       6,
       f
     );
@@ -345,20 +351,39 @@ proto.uptick.erc721.v1.MsgConvertNFT.prototype.setClassId = function(value) {
 
 
 /**
- * optional string cosmos_token_ids = 2;
- * @return {string}
+ * repeated string cosmos_token_ids = 2;
+ * @return {!Array<string>}
  */
-proto.uptick.erc721.v1.MsgConvertNFT.prototype.getCosmosTokenIds = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.uptick.erc721.v1.MsgConvertNFT.prototype.getCosmosTokenIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.uptick.erc721.v1.MsgConvertNFT} returns this
+ */
+proto.uptick.erc721.v1.MsgConvertNFT.prototype.setCosmosTokenIdsList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.uptick.erc721.v1.MsgConvertNFT} returns this
  */
-proto.uptick.erc721.v1.MsgConvertNFT.prototype.setCosmosTokenIds = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.uptick.erc721.v1.MsgConvertNFT.prototype.addCosmosTokenIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.uptick.erc721.v1.MsgConvertNFT} returns this
+ */
+proto.uptick.erc721.v1.MsgConvertNFT.prototype.clearCosmosTokenIdsList = function() {
+  return this.setCosmosTokenIdsList([]);
 };
 
 
@@ -417,20 +442,39 @@ proto.uptick.erc721.v1.MsgConvertNFT.prototype.setEvmContractAddress = function(
 
 
 /**
- * optional string evm_token_ids = 6;
- * @return {string}
+ * repeated string evm_token_ids = 6;
+ * @return {!Array<string>}
  */
-proto.uptick.erc721.v1.MsgConvertNFT.prototype.getEvmTokenIds = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+proto.uptick.erc721.v1.MsgConvertNFT.prototype.getEvmTokenIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.uptick.erc721.v1.MsgConvertNFT} returns this
+ */
+proto.uptick.erc721.v1.MsgConvertNFT.prototype.setEvmTokenIdsList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.uptick.erc721.v1.MsgConvertNFT} returns this
  */
-proto.uptick.erc721.v1.MsgConvertNFT.prototype.setEvmTokenIds = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+proto.uptick.erc721.v1.MsgConvertNFT.prototype.addEvmTokenIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.uptick.erc721.v1.MsgConvertNFT} returns this
+ */
+proto.uptick.erc721.v1.MsgConvertNFT.prototype.clearEvmTokenIdsList = function() {
+  return this.setEvmTokenIdsList([]);
 };
 
 
@@ -536,6 +580,13 @@ proto.uptick.erc721.v1.MsgConvertNFTResponse.serializeBinaryToWriter = function(
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.uptick.erc721.v1.MsgConvertERC721.repeatedFields_ = [2,6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -568,11 +619,11 @@ proto.uptick.erc721.v1.MsgConvertERC721.prototype.toObject = function(opt_includ
 proto.uptick.erc721.v1.MsgConvertERC721.toObject = function(includeInstance, msg) {
   var f, obj = {
     evmContractAddress: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    evmTokenIds: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    evmTokenIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     cosmosReceiver: jspb.Message.getFieldWithDefault(msg, 3, ""),
     evmSender: jspb.Message.getFieldWithDefault(msg, 4, ""),
     classId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    cosmosTokenIds: jspb.Message.getFieldWithDefault(msg, 6, "")
+    cosmosTokenIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -615,7 +666,7 @@ proto.uptick.erc721.v1.MsgConvertERC721.deserializeBinaryFromReader = function(m
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEvmTokenIds(value);
+      msg.addEvmTokenIds(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -631,7 +682,7 @@ proto.uptick.erc721.v1.MsgConvertERC721.deserializeBinaryFromReader = function(m
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCosmosTokenIds(value);
+      msg.addCosmosTokenIds(value);
       break;
     default:
       reader.skipField();
@@ -669,9 +720,9 @@ proto.uptick.erc721.v1.MsgConvertERC721.serializeBinaryToWriter = function(messa
       f
     );
   }
-  f = message.getEvmTokenIds();
+  f = message.getEvmTokenIdsList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       2,
       f
     );
@@ -697,9 +748,9 @@ proto.uptick.erc721.v1.MsgConvertERC721.serializeBinaryToWriter = function(messa
       f
     );
   }
-  f = message.getCosmosTokenIds();
+  f = message.getCosmosTokenIdsList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       6,
       f
     );
@@ -726,20 +777,39 @@ proto.uptick.erc721.v1.MsgConvertERC721.prototype.setEvmContractAddress = functi
 
 
 /**
- * optional string evm_token_ids = 2;
- * @return {string}
+ * repeated string evm_token_ids = 2;
+ * @return {!Array<string>}
  */
-proto.uptick.erc721.v1.MsgConvertERC721.prototype.getEvmTokenIds = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.uptick.erc721.v1.MsgConvertERC721.prototype.getEvmTokenIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.uptick.erc721.v1.MsgConvertERC721} returns this
+ */
+proto.uptick.erc721.v1.MsgConvertERC721.prototype.setEvmTokenIdsList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.uptick.erc721.v1.MsgConvertERC721} returns this
  */
-proto.uptick.erc721.v1.MsgConvertERC721.prototype.setEvmTokenIds = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.uptick.erc721.v1.MsgConvertERC721.prototype.addEvmTokenIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.uptick.erc721.v1.MsgConvertERC721} returns this
+ */
+proto.uptick.erc721.v1.MsgConvertERC721.prototype.clearEvmTokenIdsList = function() {
+  return this.setEvmTokenIdsList([]);
 };
 
 
@@ -798,20 +868,39 @@ proto.uptick.erc721.v1.MsgConvertERC721.prototype.setClassId = function(value) {
 
 
 /**
- * optional string cosmos_token_ids = 6;
- * @return {string}
+ * repeated string cosmos_token_ids = 6;
+ * @return {!Array<string>}
  */
-proto.uptick.erc721.v1.MsgConvertERC721.prototype.getCosmosTokenIds = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+proto.uptick.erc721.v1.MsgConvertERC721.prototype.getCosmosTokenIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.uptick.erc721.v1.MsgConvertERC721} returns this
+ */
+proto.uptick.erc721.v1.MsgConvertERC721.prototype.setCosmosTokenIdsList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.uptick.erc721.v1.MsgConvertERC721} returns this
  */
-proto.uptick.erc721.v1.MsgConvertERC721.prototype.setCosmosTokenIds = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+proto.uptick.erc721.v1.MsgConvertERC721.prototype.addCosmosTokenIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.uptick.erc721.v1.MsgConvertERC721} returns this
+ */
+proto.uptick.erc721.v1.MsgConvertERC721.prototype.clearCosmosTokenIdsList = function() {
+  return this.setCosmosTokenIdsList([]);
 };
 
 
