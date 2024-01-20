@@ -16,9 +16,9 @@ var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var gogoproto_gogo_pb = require('../../../gogoproto/gogo_pb.js');
-goog.object.extend(proto, gogoproto_gogo_pb);
+
 var cosmos_bank_v1beta1_bank_pb = require('../../../cosmos/bank/v1beta1/bank_pb.js');
-goog.object.extend(proto, cosmos_bank_v1beta1_bank_pb);
+
 goog.exportSymbol('proto.uptick.erc20.v1.Owner', null, global);
 goog.exportSymbol('proto.uptick.erc20.v1.RegisterCoinProposal', null, global);
 goog.exportSymbol('proto.uptick.erc20.v1.RegisterERC20Proposal', null, global);
