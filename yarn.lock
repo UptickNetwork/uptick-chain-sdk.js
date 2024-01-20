@@ -880,10 +880,10 @@
     long "^4.0.0"
     protobufjs "~6.10.2"
 
-"@uptsmart/proto-types@0.27.16":
-  version "0.27.16"
-  resolved "https://registry.yarnpkg.com/@uptsmart/proto-types/-/proto-types-0.27.16.tgz#44884b7061f2d4d4af75b37c87d4b9663f6e6f2d"
-  integrity sha512-eHkStDToDdf9QalKAgf0PHp8Y3rkjJei9YZw8fKbEw/CUSzoRAwjvvw1jv+aMRqhYkPZItWEP5mtprNyvWlTJw==
+"@uptsmart/proto-types@0.27.17":
+  version "0.27.17"
+  resolved "https://registry.yarnpkg.com/@uptsmart/proto-types/-/proto-types-0.27.17.tgz#8f7a325938234f5309de76ecd6bb895f31da63a0"
+  integrity sha512-jRPC5Hmjp4wY8peTWHbXDgJGSMS/OjfBuW85+lAU2G0Ag9BYea5TBYKyXrGSK3degxmQdzYASpan4a9RbxDBlQ==
   dependencies:
     "@irisnet/irishub-sdk" "^2.0.1"
 

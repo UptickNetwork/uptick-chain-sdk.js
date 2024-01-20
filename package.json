@@ -44,7 +44,7 @@
     "@cosmjs/crypto": "0.27.1",
     "@cosmjs/encoding": "0.27.1",
 
-    "@uptsmart/proto-types": "0.27.16",
+    "@uptsmart/proto-types": "0.27.17",
     "@uptsmart/proto-signing": "0.27.11",
     "@uptsmart/stargate": "0.27.19",
 

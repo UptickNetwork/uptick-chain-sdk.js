@@ -233,7 +233,6 @@ proto.uptick.erc721.v1.MsgConvertNFT.deserializeBinaryFromReader = function(msg,
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      console.log("xxl value ",value);
       msg.setCosmosTokenIds(value);
       break;
     case 3:
