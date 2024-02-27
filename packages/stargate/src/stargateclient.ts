@@ -10,9 +10,11 @@ import { Account, accountFromAny } from "./accounts";
 import {
   AuthExtension,
   BankExtension,
+  IbcExtension,
   QueryClient,
   setupAuthExtension,
   setupBankExtension,
+  setupIbcExtension,
   setupStakingExtension,
   setupTxExtension,
   StakingExtension,
@@ -139,7 +141,7 @@ export interface PrivateStargateClient {
 export class StargateClient {
   private readonly tmClient: Tendermint37Client | undefined;
   private readonly queryClient:
-    | (QueryClient & AuthExtension & BankExtension & StakingExtension & TxExtension)
+    | (QueryClient & AuthExtension & BankExtension & StakingExtension & TxExtension & IbcExtension)
     | undefined;
   private chainId: string | undefined;
 
@@ -155,6 +157,7 @@ export class StargateClient {
         tmClient,
         setupAuthExtension,
         setupBankExtension,
+		setupIbcExtension,
         setupStakingExtension,
         setupTxExtension,
       );
@@ -175,7 +178,7 @@ export class StargateClient {
   }
 
   protected getQueryClient():
-    | (QueryClient & AuthExtension & BankExtension & StakingExtension & TxExtension)
+    | (QueryClient & AuthExtension & BankExtension & StakingExtension & TxExtension & IbcExtension)
     | undefined {
     return this.queryClient;
   }
@@ -183,6 +186,7 @@ export class StargateClient {
   protected forceGetQueryClient(): QueryClient &
     AuthExtension &
     BankExtension &
+	IbcExtension &
     StakingExtension &
     TxExtension {
     if (!this.queryClient) {
