@@ -13,7 +13,7 @@ import {
   OfflineSigner,
   Registry,
   TxBodyEncodeObject,
-} from "@uptsmart/proto-signing";
+} from "@uptickjs/proto-signing";
 
 //xxl swift local
 // import {
@@ -81,23 +81,23 @@ import {
 //xxl ## import 
 //const nft_tx_pb= require( './proto-types/uptick/collection/v1/tx_pb');
 //const nft_tx_pb = require( '../../proto-types/uptick/collection/v1/tx_pb');
-const nft_tx_pb = require("@uptsmart/proto-types/src/uptick/collection/v1/tx_pb");
+const nft_tx_pb = require("@uptickjs/proto-types/src/uptick/collection/v1/tx_pb");
 
 //xxl ## add erc20 convert msg 0622
-const erc20_tx_pb = require("@uptsmart/proto-types/src/uptick/erc20/v1/tx_pb");
+const erc20_tx_pb = require("@uptickjs/proto-types/src/uptick/erc20/v1/tx_pb");
 
 //xxl 02 local
 // const erc721_tx_pb = require("../../proto-types/src/uptick/erc721/v1/tx_pb")
 //xxl 02 npm
-const erc721_tx_pb = require("@uptsmart/proto-types/src/uptick/erc721/v1/tx_pb")
+const erc721_tx_pb = require("@uptickjs/proto-types/src/uptick/erc721/v1/tx_pb")
 
 //xxl 02 local
 // const nft_transfer_tx_pb = require("../../proto-types/src/ibc/applications/nft_transfer/v1/tx_pb")
 //xxl 02 npm
-const nft_transfer_tx_pb = require("@uptsmart/proto-types/src/ibc/applications/nft_transfer/v1/tx_pb")
+const nft_transfer_tx_pb = require("@uptickjs/proto-types/src/ibc/applications/nft_transfer/v1/tx_pb")
 
 //xxl 03
-const cw721_tx_pb = require("@uptsmart/proto-types/src/uptick/cw721/v1/tx_pb")
+const cw721_tx_pb = require("@uptickjs/proto-types/src/uptick/cw721/v1/tx_pb")
 
 
 import Long from "long";

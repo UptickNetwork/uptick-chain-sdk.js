@@ -1,9 +1,9 @@
 {
-  "name": "@uptsmart/stargate",
+  "name": "@uptickjs/stargate",
   "version": "0.27.19",
   "description": "Utilities for uptick v0.2.7",
   "contributors": [
-    "Simon Warta <webmaster128@users.noreply.github.com>"
+	 "Uptick <starryrepublican@gmail.com>"
   ],
   "license": "Apache-2.0",
   "main": "build/index.js",
@@ -48,7 +48,7 @@
 
     "@cosmjs/utils": "0.27.1",
     "@types/mocha": "^10.0.1",
-    "@uptsmart/proto-signing": "^0.27.7",
+    "@uptickjs/proto-signing": "^0.27.7",
     "cosmjs-types": "^0.4.0",
     "long": "^4.0.0",
     "protobufjs": "~6.10.2",

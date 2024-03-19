@@ -1,4 +1,4 @@
-import { EncodeObject } from "@uptsmart/proto-signing";
+import { EncodeObject } from "@uptickjs/proto-signing";
 import { MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
 import { MsgWithdrawDelegatorReward } from "cosmjs-types/cosmos/distribution/v1beta1/tx";
 import { MsgDeposit, MsgSubmitProposal, MsgVote } from "cosmjs-types/cosmos/gov/v1beta1/tx";
