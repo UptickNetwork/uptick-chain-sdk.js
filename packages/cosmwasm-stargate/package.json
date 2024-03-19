@@ -1,9 +1,9 @@
 {
-  "name": "@uptsmart/cosmwasm-stargate",
-  "version": "0.27.6",
+  "name": "@uptickjs/cosmwasm-stargate",
+  "version": "0.27.18",
   "description": "CosmWasm SDK",
   "contributors": [
-    "Will Clark <willclarktech@users.noreply.github.com>"
+	 "Uptick <starryrepublican@gmail.com>"
   ],
   "license": "Apache-2.0",
   "main": "build/index.js",
@@ -42,8 +42,8 @@
     "@cosmjs/crypto": "^0.27.1",
     "@cosmjs/encoding": "^0.27.1",
     "@cosmjs/math": "^0.27.1",
-    "@uptsmart/proto-signing": "^0.27.8",
-    "@uptsmart/stargate": "^0.27.15",
+    "@uptickjs/proto-signing": "^0.27.8",
+    "@uptickjs/stargate": "^0.27.15",
     "@cosmjs/tendermint-rpc": "^0.27.1",
     "@cosmjs/utils": "^0.27.1",
     "cosmjs-types": "^0.5.2",

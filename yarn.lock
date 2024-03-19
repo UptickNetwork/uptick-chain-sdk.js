@@ -856,10 +856,10 @@
   resolved "https://registry.yarnpkg.com/@ungap/promise-all-settled/-/promise-all-settled-1.1.2.tgz#aa58042711d6e3275dd37dc597e5d31e8c290a44"
   integrity sha512-sL/cEvJWAnClXw0wHk85/2L0G6Sj8UB0Ctc1TEMbKSsmpRosqhwj9gWgFRZSrBr2f9tiXISwNhCPmlfqUqyb9Q==
 
-"@uptsmart/proto-signing@0.27.11":
-  version "0.27.11"
-  resolved "https://registry.yarnpkg.com/@uptsmart/proto-signing/-/proto-signing-0.27.11.tgz#b2eef8b786bfceb6f6a2f6331f02d4a9bbb923ef"
-  integrity sha512-Xvm8wd+abFYJt5llRShqzh2aApX80NjSDDGTLtW2ej3/7nK/Yxoczi2szew9Vtn2XqvkGYy/tSA2ul42J/qs1g==
+"@uptickjs/proto-signing@0.27.18", "@uptickjs/proto-signing@^0.27.7":
+  version "0.27.18"
+  resolved "https://registry.yarnpkg.com/@uptickjs/proto-signing/-/proto-signing-0.27.18.tgz#4ae5e4644459a52da6066910671c431dcc2af412"
+  integrity sha512-7SD6pluVzk9Cyt3Derb/W8UWNY4xZ6fBTzTHoNzb1tYl046kYEY1XmRlQazAoNUH2LZB8YhD0Al9Q5JbsfZyUg==
   dependencies:
     "@cosmjs/amino" "0.27.1"
     "@cosmjs/crypto" "0.27.1"
@@ -868,29 +868,17 @@
     long "^4.0.0"
     protobufjs "~6.10.2"
 
-"@uptsmart/proto-signing@^0.27.7":
-  version "0.27.10"
-  resolved "https://registry.yarnpkg.com/@uptsmart/proto-signing/-/proto-signing-0.27.10.tgz#1bb6b819037235d82db95601a10def0e71358f21"
-  integrity sha512-VXzsdMyholmnRGvY5N7HqndsJuzWiCkUHcpfdmQYm3sCMpABq/0ZIxwOrht7ahmhv6Z64l4Wbmpa3+ypFFAyiw==
-  dependencies:
-    "@cosmjs/amino" "0.27.1"
-    "@cosmjs/crypto" "0.27.1"
-    "@cosmjs/math" "0.27.1"
-    cosmjs-types "^0.4.0"
-    long "^4.0.0"
-    protobufjs "~6.10.2"
-
-"@uptsmart/proto-types@0.27.17":
-  version "0.27.17"
-  resolved "https://registry.yarnpkg.com/@uptsmart/proto-types/-/proto-types-0.27.17.tgz#8f7a325938234f5309de76ecd6bb895f31da63a0"
-  integrity sha512-jRPC5Hmjp4wY8peTWHbXDgJGSMS/OjfBuW85+lAU2G0Ag9BYea5TBYKyXrGSK3degxmQdzYASpan4a9RbxDBlQ==
+"@uptickjs/proto-types@0.27.18":
+  version "0.27.18"
+  resolved "https://registry.yarnpkg.com/@uptickjs/proto-types/-/proto-types-0.27.18.tgz#ca334e419210bc2159b601de16255a09c76ceb0c"
+  integrity sha512-LXivdrgypSvPa9lHc3pQ31Tpo2bCXh5uzGui8UQLQS4ckN+G644Ht6L6WjdHZTbyGObIfI8w9+nFH+Vdjh9laQ==
   dependencies:
     "@irisnet/irishub-sdk" "^2.0.1"
 
-"@uptsmart/stargate@0.27.19":
+"@uptickjs/stargate@0.27.19":
   version "0.27.19"
-  resolved "https://registry.yarnpkg.com/@uptsmart/stargate/-/stargate-0.27.19.tgz#5342c8a948886c01382b5ca58560ef31b7ee942b"
-  integrity sha512-cgu5xgWApqYAVkSrFkayLybpg4on4mGn6yuKcBs+jtMLIxWYWEeK9B3N80oTrGXDSlQ9p6PlPQ1AX0R5T6cdOg==
+  resolved "https://registry.yarnpkg.com/@uptickjs/stargate/-/stargate-0.27.19.tgz#a3895740b2729d14c7a498618c0f7b39f8252a46"
+  integrity sha512-pwLb/eq29gMmPVUaIrxwVO1B3gb/nQgJrLooWURORhC1uiXxAgdzAaRXXYYDXnykUKY/p5+ulc45kyw6n/H0Iw==
   dependencies:
     "@confio/ics23" "^0.6.3"
     "@cosmjs/amino" "0.27.1"
@@ -900,7 +888,7 @@
     "@cosmjs/tendermint-rpc" "0.32.2"
     "@cosmjs/utils" "0.27.1"
     "@types/mocha" "^10.0.1"
-    "@uptsmart/proto-signing" "^0.27.7"
+    "@uptickjs/proto-signing" "^0.27.7"
     cosmjs-types "^0.4.0"
     long "^4.0.0"
     protobufjs "~6.10.2"
